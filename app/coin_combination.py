@@ -6,4 +6,7 @@ def get_coin_combination(cents: int) -> list:
         coins[i] = cents // values[i]
         cents -= coins[i] * values[i]
 
-    return coins
+    print(coins)
+
+
+get_coin_combination(-2)
