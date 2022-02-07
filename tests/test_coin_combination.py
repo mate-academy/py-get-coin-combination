@@ -1,12 +1,6 @@
 from app.coin_combination import get_coin_combination
 
 
-def test_type():
-    assert type(get_coin_combination(0)) == list
-    assert len(get_coin_combination(0)) == 4
-    assert all(type(i) == int for i in get_coin_combination(0))
-
-
 def test_limit_values():
     assert get_coin_combination(4) == [4, 0, 0, 0]
     assert get_coin_combination(5) == [0, 1, 0, 0]
