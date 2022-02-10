@@ -25,4 +25,4 @@ def test_quarter():
 
 def test_all_coins():
     assert get_coin_combination(41) == [1, 1, 1, 1]
-    assert get_coin_combination(82) == [2, 1, 0, 3]  # not [2, 2, 2, 2]
+    assert get_coin_combination(82) == [2, 1, 0, 3]
