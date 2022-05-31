@@ -16,5 +16,5 @@ class TestCoinCombination:
     def test_get_coin_combination(self, cents, coins_list):
         assert get_coin_combination(cents) == coins_list, (
             f"Function 'get_coin_combination' should return {coins_list} "
-            f"when 'numbers' equals to {cents}"
+            f"when 'cents' equals to {cents}"
         )
