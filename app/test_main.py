@@ -31,4 +31,3 @@ def test_get_one_penny_and_one_nickel_and_one_dime():
 
 def test_get_all_coin_types():
     assert get_coin_combination(41) == [1, 1, 1, 1]
-
