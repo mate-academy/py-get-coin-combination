@@ -8,6 +8,7 @@ def test_get_one_nickel():
 
     assert value == [0, 0, 0, 0]
 
+
 def test_get_one_penny():
     coins = 1
 
@@ -17,27 +18,19 @@ def test_get_one_penny():
 
 
 def test_get_one_nickel():
-    coins = 5
+    coins = 6
 
     value = get_coin_combination(coins)
 
-    assert value == [0, 1, 0, 0]
+    assert value == [1, 1, 0, 0]
 
 
 def test_get_one_nickel():
-    coins = 10
+    coins = 16
 
     value = get_coin_combination(coins)
 
-    assert value == [0, 0, 1, 0]
-
-
-def test_get_one_nickel():
-    coins = 25
-
-    value = get_coin_combination(coins)
-
-    assert value == [0, 0, 0, 1]
+    assert value == [1, 1, 1, 0]
 
 
 def test_get_one_nickel():
