@@ -13,7 +13,7 @@ def test_one_coin():
 
 
 def test_combination():
-    assert get_coin_combination(21) == [1, 0, 2, 0]
-    assert get_coin_combination(75) == [0, 0, 0, 3]
-    assert get_coin_combination(150) == [0, 0, 0, 6]
-
+    get_coin_combination(1) == [1, 0, 0, 0]
+    get_coin_combination(6) == [1, 1, 0, 0]
+    get_coin_combination(17) == [2, 1, 1, 0]
+    get_coin_combination(50) == [0, 0, 0, 2]
