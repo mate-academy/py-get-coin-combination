@@ -11,13 +11,13 @@ def test_penny_combination():
 
 
 def test_nickels_combination():
-    assert get_coin_combination(15) == [1, 0, 0, 0]
-    assert get_coin_combination(9) == [4, 0, 0, 0]
+    assert get_coin_combination(15) == [0, 1, 1, 0]
+    assert get_coin_combination(9) == [4, 1, 0, 0]
 
 
 def test_dimes_combination():
-    assert get_coin_combination(15) == [1, 0, 0, 0]
-    assert get_coin_combination(9) == [4, 0, 0, 0]
+    assert get_coin_combination(24) == [4, 0, 2, 0]
+    assert get_coin_combination(10) == [0, 0, 1, 0]
 
 
 def test_full_combination():
