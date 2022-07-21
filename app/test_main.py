@@ -30,7 +30,7 @@ class TestOfTypeCombination:
                                  pytest.param(
                                      93,
                                      [3, 1, 1, 3],
-                                     id="should return different types of coins"
+                                     id="should return different coins"
                                  )
                              ]
                              )
