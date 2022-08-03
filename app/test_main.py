@@ -17,5 +17,4 @@ def get_test_quarter():
     assert get_coin_combination(75) == [0, 0, 0, 3]
 
 
-def get_test_penny_and_nickel_and_dime_and_quarter():
-    assert get_coin_combination(67) == [2, 1, 1, 2]
+
