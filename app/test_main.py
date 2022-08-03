@@ -2,9 +2,6 @@ from app.main import get_coin_combination
 
 
 class TestCoin:
-    def test_if_coin_is_zero(self):
-        assert get_coin_combination(0) == [0, 0, 0]
-
     def test_if_coin_is_one(self):
         assert get_coin_combination(1) == [1, 0, 0, 0]
 
