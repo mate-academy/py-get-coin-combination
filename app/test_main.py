@@ -13,5 +13,8 @@ class TestGetCoinCombination:
         ],
 
     )
-    def test_get_coin_combination_validation(self, initial_cents, expected_combination_of_coins):
-        assert get_coin_combination(initial_cents) == expected_combination_of_coins
+    def test_get_coin_combination_validation(self,
+                                             initial_cents,
+                                             expected_combination_of_coins):
+        result = get_coin_combination(initial_cents)
+        assert result == expected_combination_of_coins
