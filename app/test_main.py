@@ -4,7 +4,8 @@ from app.main import get_coin_combination
 
 
 class TestGetCoinsCombination:
-    @pytest.mark.parametrize("initial_number, expected_coins",
+    @pytest.mark.parametrize(
+        "initial_number, expected_coins",
         [
             pytest.param(
                 41,
