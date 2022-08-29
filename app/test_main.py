@@ -21,4 +21,3 @@ class TestGetCoinCombination:
                                               cents,
                                               expected):
         assert get_coin_combination(cents) == expected
-
