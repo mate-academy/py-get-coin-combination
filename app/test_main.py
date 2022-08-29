@@ -14,7 +14,7 @@ class TestGetCoinCombination:
             (
                 0,
                 [0, 0, 0, 0]
-             )
+            )
         ]
     )
     def test_should_return_correct_coins_list(self,
