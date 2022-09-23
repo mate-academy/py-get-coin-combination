@@ -7,6 +7,10 @@ class TestGetCoinCombination:
         "value, answer",
         [
             pytest.param(
+                666, [1, 1, 1, 26],
+                id="test different values"
+            ),
+            pytest.param(
                 0, [0, 0, 0, 0],
                 id="test value = 0"
             ),
