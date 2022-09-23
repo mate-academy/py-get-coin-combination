@@ -24,7 +24,6 @@ class TestGetCoinCombination:
         )
     )
 
-
-def test_should_return_expected_list(
-        cents, expected_list):
-    assert get_coin_combination(cents) == expected_list
+    def test_should_return_expected_list(
+            self, cents, expected_list):
+        assert get_coin_combination(cents) == expected_list
