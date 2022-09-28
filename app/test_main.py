@@ -9,5 +9,5 @@ class TestCoinCombination:
         (17, [2, 1, 1, 0]),
         (50, [0, 0, 0, 2])
     ])
-    def test_values_have_the_correct_type(self, initial_variable, expected_results):
+    def test_values_are_passed(self, initial_variable, expected_results):
         assert get_coin_combination(initial_variable) == expected_results
