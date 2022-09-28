@@ -17,7 +17,7 @@ import pytest
         ),
         pytest.param(
             17,
-            [2, 1, 1 ,0],
+            [2, 1, 1, 0],
             id="should added dime if coins > 10"
         ),
         pytest.param(
@@ -27,9 +27,5 @@ import pytest
         )
     ]
 )
-
-def test_get_coin_combination_correctly(
-        cents: int,
-        coin: list
-):
+def test_get_coin_combination_correctly(cents: int, coin: list):
     assert get_coin_combination(cents) == coin
