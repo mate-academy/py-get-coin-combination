@@ -1,16 +1,6 @@
 from app.main import get_coin_combination
 
 
-def test_should_return_true_if_cents_type_equal_int():
-    value = 0
-    answer = True
-    try:
-        result = isinstance(get_coin_combination(value), int)
-        assert answer == result
-    except TypeError:
-        assert answer is False
-
-
 def test_should_return_0_if_cents_is_0():
     result = get_coin_combination(0)
 
