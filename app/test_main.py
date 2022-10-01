@@ -14,14 +14,15 @@ from typing import List
         pytest.param(
             1, [1, 0, 0, 0],
             id="Should return one pennie then number = 1"
-                ),
+        ),
         pytest.param(
             6, [1, 1, 0, 0],
             id="Should return one pennie and one nickel then number = 6"
         ),
         pytest.param(
             16, [1, 1, 1, 0],
-            id="Should return one pennie, one nickel and one dime then number = 16"
+            id="Should return one pennie,"
+               " one nickel and one dime then number = 16"
         ),
         pytest.param(
             41, [1, 1, 1, 1],
