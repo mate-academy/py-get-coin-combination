@@ -9,7 +9,7 @@ from app.main import get_coin_combination
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
         (17, [2, 1, 1, 0]),
-        (50, [0, 0, 0, 3])
+        (50, [0, 0, 0, 2])
     ]
 )
 def test_should_return_number_of_coins(coin, expected_rezult):
