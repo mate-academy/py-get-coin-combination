@@ -7,10 +7,12 @@ from app.main import get_coin_combination
     [
         pytest.param(
             1, [1, 0, 0, 0],
-            id="should return minimal of the smallest possible number of coins"),
+            id="should return minimal of the smallest possible number of coins"
+        ),
         pytest.param(
             6, [1, 1, 0, 0],
-            id="should return minimal numbers of coins what equal same amount"),
+            id="should return minimal numbers of coins what equal same amount"
+        ),
         pytest.param(
             17, [2, 1, 1, 0],
             id="should return [2, 1, 1, 0], 2 pennies + 1 nickel + 1 dime "
