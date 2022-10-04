@@ -21,7 +21,8 @@ class TestCoinCombination:
             ),
             pytest.param(
                 17, [2, 1, 1, 0],
-                id="Should return [2, 1, 1, 0] we have 2 pennies + 1 nickel + 1 dime"
+                id="Should return [2, 1, 1, 0] we have 2 pennies + \
+                 1 nickel + 1 dime"
             ),
             pytest.param(
                 50, [0, 0, 0, 2],
