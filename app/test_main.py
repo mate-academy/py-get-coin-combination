@@ -28,5 +28,6 @@ from app.main import get_coin_combination
         ),
     ]
 )
-def test_return_right_coin_combination(cents: int, list_of_coins: list):
+def test_return_right_coin_combination(cents: int,
+                                       list_of_coins: list) -> None:
     assert get_coin_combination(cents) == list_of_coins
