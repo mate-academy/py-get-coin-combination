@@ -9,7 +9,7 @@ def test_should_return_penny_and_nickel() -> None:
     assert get_coin_combination(6) == [1, 1, 0, 0]
 
 
-def test_should_return_penny_and_nickel_and_dime() -> None:
+def test_should_return_penny_and_nickel_and_dim() -> None:
     assert get_coin_combination(17) == [2, 1, 1, 0]
 
 
