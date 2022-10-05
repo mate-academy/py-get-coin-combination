@@ -1,6 +1,10 @@
 from app.main import get_coin_combination
 
 
+def test_zero() -> None:
+    assert get_coin_combination(0) == [0, 0, 0, 0]
+
+
 def test_only_pennies() -> None:
     assert get_coin_combination(1) == [1, 0, 0, 0]
 
