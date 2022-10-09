@@ -40,5 +40,5 @@ from app.main import get_coin_combination
         )
     ],
 )
-def test_coins_combination(coins: str, expected: bool) -> None:
+def test_coins_combination(coins: int, expected: bool) -> None:
     assert get_coin_combination(coins) == expected
