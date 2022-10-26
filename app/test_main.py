@@ -33,6 +33,6 @@ def test_get_coin_combination_correctly(cents: int, result_list: list) -> None:
         )
     ]
 )
-def test_raise_error_correctly(cents, excepted_error) -> None:
+def test_raise_error_correctly(cents: int, excepted_error: type) -> None:
     with pytest.raises(excepted_error):
         get_coin_combination(cents)
