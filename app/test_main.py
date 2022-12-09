@@ -49,13 +49,13 @@ def test_zero_values(cents: int, result: list) -> None:
 
 def test_only_dimes_value() -> None:
     assert (
-            get_coin_combination(10) == [0, 0, 1, 0]
+        get_coin_combination(10) == [0, 0, 1, 0]
     ), "If you have 10 cents, result should count only 1 dimes."
 
 
 def test_only_zero_value() -> None:
     assert (
-            get_coin_combination(0) == [0, 0, 0, 0]
+        get_coin_combination(0) == [0, 0, 0, 0]
     ), "If you have zero cents, result should be list with zero values"
 
 
