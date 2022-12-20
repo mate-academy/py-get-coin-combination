@@ -5,7 +5,7 @@ import pytest
 class TestGetCoinCombination:
 
     @pytest.mark.parametrize(
-        "cents,coins",
+        "cents, coins",
         [
             pytest.param(
                 1, [1, 0, 0, 0], id="test penny"
