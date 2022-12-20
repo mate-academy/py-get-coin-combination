@@ -15,5 +15,5 @@ class TestGetCoinCombination:
                          id="should return 2 quarter"),
         ]
     )
-    def test_coin_combination(self, cents, expected_result):
+    def test_coin_combination(self, cents: int, expected_result: list) -> None:
         assert get_coin_combination(cents) == expected_result
