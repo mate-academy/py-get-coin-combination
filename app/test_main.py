@@ -1,4 +1,17 @@
 from app.main import get_coin_combination
 
 
-# write your tests here
+def test_cents_less_than_5() -> None:
+    assert get_coin_combination(4) == [4, 0, 0, 0]
+
+
+def test_cents_less_than_10() -> None:
+    assert get_coin_combination(9) == [4, 1, 0, 0]
+
+
+def test_cents_less_than_25() -> None:
+    assert get_coin_combination(20) == [4, 0, 2, 0]
+
+
+def test_cents_more_than_25() -> None:
+    assert get_coin_combination(104) == [4, 0, 0, 4]
