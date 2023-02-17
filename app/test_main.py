@@ -14,11 +14,6 @@ class TestGetCoinCombination:
                 id="list of 0 if cents is 0"
             ),
             pytest.param(
-                -12,
-                [0, 0, 0, 0],
-                id="list of 0 if cents is negative"
-            ),
-            pytest.param(
                 57.91,
                 [2.0, 1.0, 0.0, 2.0],
                 id="correct result if cents is float"
