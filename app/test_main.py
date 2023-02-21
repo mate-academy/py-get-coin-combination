@@ -3,7 +3,7 @@ import pytest
 from app.main import get_coin_combination
 
 
-class TestGetHumanAgeClass:
+class TestGetCoinCombinationClass:
     @pytest.mark.parametrize(
         "get_coins, sorted_coins",
         [
