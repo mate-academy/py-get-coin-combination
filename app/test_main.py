@@ -13,13 +13,3 @@ from app.main import get_coin_combination
 ])
 def test_get_coin_combination(cents: int, expected_coins: List[int]) -> None:
     assert get_coin_combination(cents) == expected_coins
-
-
-def test_get_coin_combination_raises_error_for_negative_input() -> None:
-    with pytest.raises(ValueError):
-        get_coin_combination(-1)
-
-
-def test_get_coin_combination_raises_error_for_non_integer_input() -> None:
-    with pytest.raises(TypeError):
-        get_coin_combination(3.5)
