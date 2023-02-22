@@ -22,7 +22,7 @@ def test_coin_combination_for_zero_cents() -> None:
 
 
 def test_coin_combination_for_large_value() -> None:
-    assert get_coin_combination(358) == [3, 0, 2, 14]
+    assert get_coin_combination(243) == [3, 1, 1, 9]
 
 
 def test_coin_combination_for_negative_value() -> None:
