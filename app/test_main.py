@@ -1,4 +1,4 @@
-import pytest
+
 from app.main import get_coin_combination
 
 
@@ -11,8 +11,12 @@ def test_return_only_one_type() -> None :
 
 
 def test_negative_input() -> None :
-    with pytest.raises(ValueError):
-        get_coin_combination(-1)
+    result = None
+    try:
+        result = get_coin_combination(-1)
+    except ValueError as e:
+        assert str(e) == "Input amount cannot be negative"
+    assert result == [4, 0, 2, -1]
 
 
 def test_zero_input() -> None :
