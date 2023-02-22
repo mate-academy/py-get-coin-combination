@@ -19,7 +19,7 @@ class TestGetCoinCombination:
             pytest.param(
                 17,
                 [2, 1, 1, 0],
-                id="test for 2 pennies + 1 nickel + 1 dime should return [2, 1, 1, 0]"
+                id="test for 2 pennies, 1 nickel, 1 dime return [2, 1, 1, 0]"
             ),
             pytest.param(
                 50,
