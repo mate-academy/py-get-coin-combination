@@ -1,4 +1,5 @@
 import pytest
+from typing import List
 from app.main import get_coin_combination
 
 
@@ -10,16 +11,15 @@ from app.main import get_coin_combination
     pytest.param(0, [0, 0, 0, 0], id="zero_cents"),
     pytest.param(1000000, [0, 0, 0, 40000], id="one_million_cents")
 ])
-def test_get_coin_combination(cents, expected_coins):
+def test_get_coin_combination(cents: int, expected_coins: List[int]) -> None:
     assert get_coin_combination(cents) == expected_coins
 
 
-def test_get_coin_combination_raises_error_for_negative_input():
+def test_get_coin_combination_raises_error_for_negative_input() -> None:
     with pytest.raises(ValueError):
         get_coin_combination(-1)
 
 
-def test_get_coin_combination_raises_error_for_non_integer_input():
+def test_get_coin_combination_raises_error_for_non_integer_input() -> None:
     with pytest.raises(TypeError):
         get_coin_combination(3.5)
-
