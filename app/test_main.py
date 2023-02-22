@@ -1,5 +1,6 @@
 from app.main import get_coin_combination
 
+
 def test_return_list() -> None:
     assert type(get_coin_combination(0)) is list
 
