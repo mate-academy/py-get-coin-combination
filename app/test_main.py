@@ -13,10 +13,10 @@ from app.main import get_coin_combination
         pytest.param(1.15, [1.0, 0, 0, 0], id="test_float_input")
     ]
 )
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
 
 
-def test_if_function_raises_typeerror():
+def test_if_function_raises_typeerror() -> None:
     with pytest.raises(TypeError):
         get_coin_combination("")
