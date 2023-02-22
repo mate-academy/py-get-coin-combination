@@ -12,5 +12,4 @@ from app.main import get_coin_combination
     ]
 )
 def test_correct_coin_combination(cents: int, result: list) -> None:
-    assert (get_coin_combination(cents) == result,
-            f"combination for {cents} cents should be {result}")
+    assert get_coin_combination(cents) == result, f"combination for {cents} cents should be {result}"
