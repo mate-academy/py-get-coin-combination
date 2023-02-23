@@ -1,29 +1,40 @@
+import pytest
+
 from app.main import get_coin_combination
 
 
-def test_coin_combination_for_one_penny() -> None:
-    assert get_coin_combination(1) == [1, 0, 0, 0]
+def test_should_return_type_list():
+    assert (
+        isinstance(get_coin_combination(23), list) is True
+    ), "Function 'coin_combination' should return list"
 
 
-def test_coin_combination_for_six_cents() -> None:
-    assert get_coin_combination(6) == [1, 1, 0, 0]
+@pytest.mark.parametrize(
+    "cents_int, cents_list",
+    [
+        (0, [0, 0, 0, 0]),
+        (1, [1, 0, 0, 0]),
+        (5, [0, 1, 0, 0]),
+        (6, [1, 1, 0, 0]),
+        (9, [4, 1, 0, 0]),
+        (10, [0, 0, 1, 0]),
+        (14, [4, 0, 1, 0]),
+        (18, [3, 1, 1, 0]),
+        (30, [0, 1, 0, 1]),
+        (35, [0, 0, 1, 1]),
+        (52, [2, 0, 0, 2]),
+        (76, [1, 0, 0, 3]),
+        (100, [0, 0, 0, 4]),
+        (964, [4, 0, 1, 38]),
+        (4653, [3, 0, 0, 186]),
+        (78655, [0, 1, 0, 3146]),
+        (345875, [0, 0, 0, 13835]),
+    ],
+)
+def test_coin_combination(cents_int, cents_list) -> None:
+    assert get_coin_combination(cents_int) == cents_list, (
+        f"Function 'coin_combination' should return {cents_list} "
+        f"when value is {cents_int}"
+    )
 
 
-def test_coin_combination_for_seventeen_cents() -> None:
-    assert get_coin_combination(17) == [2, 1, 1, 0]
-
-
-def test_coin_combination_for_fifty_cents() -> None:
-    assert get_coin_combination(50) == [0, 0, 0, 2]
-
-
-def test_coin_combination_for_zero_cents() -> None:
-    assert get_coin_combination(0) == [0, 0, 0, 0]
-
-
-def test_coin_combination_for_large_value() -> None:
-    assert get_coin_combination(243) == [3, 1, 1, 9]
-
-
-def test_coin_combination_for_negative_value() -> None:
-    assert not get_coin_combination(-5)
