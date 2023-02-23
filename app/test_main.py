@@ -3,7 +3,7 @@ import pytest
 from app.main import get_coin_combination
 
 
-def test_should_return_type_list():
+def test_should_return_type_list() -> None:
     assert (
         isinstance(get_coin_combination(23), list) is True
     ), "Function 'coin_combination' should return list"
@@ -31,10 +31,8 @@ def test_should_return_type_list():
         (345875, [0, 0, 0, 13835]),
     ],
 )
-def test_coin_combination(cents_int, cents_list) -> None:
+def test_coin_combination(cents_int: int, cents_list: list) -> None:
     assert get_coin_combination(cents_int) == cents_list, (
         f"Function 'coin_combination' should return {cents_list} "
         f"when value is {cents_int}"
     )
-
-
