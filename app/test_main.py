@@ -22,9 +22,12 @@ from app.main import get_coin_combination
 def test_check_correct_coins_combination(cents: int, result: list) -> None:
     assert get_coin_combination(cents) == result
 
+
 def sum_of_coins_must_be_equal_to_cents() -> None:
     assert (get_coin_combination(50)[0] + get_coin_combination(50)[1] * 5
-    + get_coin_combination(50)[2] * 10 + get_coin_combination(50)[3] * 25) == 50
+            + get_coin_combination(50)[2] * 10
+            + get_coin_combination(50)[3] * 25) == 50
+
 
 def amount_of_cents_should_be_not_less_than_0() -> None:
     with pytest.raises(ValueError):
