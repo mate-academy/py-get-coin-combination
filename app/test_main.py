@@ -10,7 +10,7 @@ def test_should_return_valid_amount_of_pennies() -> None:
 
 
 def test_should_return_biggest_coins_first() -> None:
-    assert get_coin_combination(42) == [2, 1, 1, 1]
+    assert get_coin_combination(43) == [3, 1, 1, 1]
 
 
 def test_should_return_only_quarters_when_cent_divided_by_25() -> None:
