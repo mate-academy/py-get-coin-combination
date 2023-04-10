@@ -23,6 +23,7 @@ class TestGetCoinCombination:
             )
         ]
     )
-
-    def test_correctly_worked(self, input_value: int, expected_value: list[int]):
+    def test_correctly_worked(self,
+                              input_value: int,
+                              expected_value: list[int]) -> None:
         assert get_coin_combination(input_value) == expected_value
