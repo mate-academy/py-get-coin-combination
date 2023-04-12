@@ -7,8 +7,8 @@ from app.main import get_coin_combination
     "cent, coins",
     [
         pytest.param(
-          1, [1, 0, 0, 0],
-          id="correct amount of pennies"
+            1, [1, 0, 0, 0],
+            id="correct amount of pennies"
         ),
         pytest.param(
             6, [1, 1, 0, 0],
