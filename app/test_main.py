@@ -24,7 +24,7 @@ class TestCoinCombination:
             pytest.param(
                 41,
                 [1, 1, 1, 1],
-                id="Test function nickels, pennies, dimes and quarters combinations"
+                id="Test function for all combinations"
             ),
         ]
     )
