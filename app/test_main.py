@@ -13,6 +13,7 @@ from app.main import get_coin_combination
     (99, [4, 0, 2, 3]),
     (100, [0, 0, 0, 4]),
 ])
-def test_get_coin_combination(cents, expected_coins):
+def test_get_coin_combination(
+        cents: int,
+        expected_coins: list) -> None:
     assert get_coin_combination(cents) == expected_coins
-
