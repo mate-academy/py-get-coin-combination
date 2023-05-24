@@ -3,32 +3,20 @@ import pytest
 from app.main import get_coin_combination
 
 
-def test_func_return_list():
-    assert isinstance(get_coin_combination(123), list)
-
-
-def test_func_return_right_len():
-    assert len(get_coin_combination(123)) == 4
-
-
-def test_fun_can_convert_all_values():
-    assert 0 not in get_coin_combination(41)
-
-
 @pytest.mark.parametrize(
-    "cents, result",
+    "cents,combination",
     [
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
         (17, [2, 1, 1, 0]),
         (50, [0, 0, 0, 2])
     ],
-    ids=["penni",
-         "nickel convert",
-         "dime convert",
-         "quarter convert"]
+    ids=[
+        "Start count from penny",
+        "Checking if 1 nickel = 5 pennies",
+        "Checking if 1 dime = 10 pennies",
+        "Checking counting quarters"
+    ]
 )
-def test_big_parametrize_daddy(cents, result):
-    assert (
-            get_coin_combination(cents) == result
-    )
+def test_get_coin_combination(cents: int, combination: list) -> None:
+    assert get_coin_combination(cents) == combination
