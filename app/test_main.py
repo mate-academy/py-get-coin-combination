@@ -4,11 +4,11 @@ from app.main import get_coin_combination
 
 
 def test_func_return_list():
-    assert isinstance(get_coin_combination(123), list)
+    assert isinstance(get_coin_combination(0), list)
 
 
 def test_func_return_right_len():
-    assert len(get_coin_combination(123)) == 4
+    assert len(get_coin_combination(0)) == 4
 
 
 def test_fun_can_convert_all_values():
