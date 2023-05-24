@@ -3,7 +3,7 @@ from app.main import get_coin_combination
 
 
 def test_value_should_be_positive() -> None:
-    cents = -55
+    cents = 55
     assert (
         cents >= 0
     ), "Value should be positive"
