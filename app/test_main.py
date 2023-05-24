@@ -22,7 +22,11 @@ def test_fun_can_convert_all_values():
         (6, [1, 1, 0, 0]),
         (17, [2, 1, 1, 0]),
         (50, [0, 0, 0, 2])
-    ]
+    ],
+    ids=["penni",
+         "nickel convert",
+         "dime convert",
+         "quarter convert"]
 )
 def test_big_parametrize_daddy(cents, result):
     assert (
