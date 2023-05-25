@@ -13,8 +13,7 @@ from app.main import get_coin_combination
         (50, [0, 0, 0, 2]),
         (26, [1, 0, 0, 1]),
     ],
-    ids=
-    [
+    ids=[
         "Should return all 0 if cents is 0",
         "Should return 1 penny if cents is 1",
         "Should return 1 nickels and 1 pennie if cents is 6",
