@@ -1,5 +1,3 @@
-import pytest
-
 from app.main import get_coin_combination
 
 
@@ -33,7 +31,3 @@ def test_should_return_different_r() -> None:
 
 def test_should_return_different_lastone() -> None:
     assert get_coin_combination(30) == [0, 1, 0, 1]
-
-
-
-
