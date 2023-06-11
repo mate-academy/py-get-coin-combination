@@ -44,4 +44,3 @@ class TestCoinCombination:
 
         with pytest.raises(expected_error):
             get_coin_combination(cents)
-
