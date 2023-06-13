@@ -27,7 +27,7 @@ def test_number_of_pennies_always_less_than_5(cents: int, result: int) -> None:
     ]
 )
 def test_number_of_nickels_always_less_than_2(cents: int,
-                                               result: int) -> None:
+                                              result: int) -> None:
     assert get_coin_combination(cents)[1] == result
 
 
