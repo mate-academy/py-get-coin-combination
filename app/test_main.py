@@ -15,7 +15,7 @@ class TestGetCoinCombination:
             pytest.param(
                 1,
                 [1, 0, 0, 0],
-                id = "When 1 coin is given, returns 1 penny!"
+                id="When 1 coin is given, returns 1 penny!"
             ),
             pytest.param(
                 5,
@@ -35,7 +35,8 @@ class TestGetCoinCombination:
             pytest.param(
                 41,
                 [1, 1, 1, 1],
-                id="When 41 coins are given, returns 1 coin of each denomination!"
+                id="When 41 coins are given, "
+                   "returns 1 coin of each denomination!"
             )
         ]
     )
