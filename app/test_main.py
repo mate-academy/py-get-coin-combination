@@ -17,7 +17,7 @@ class TestGetCoinCombination:
     )
     def test_should_calculate_smallest_possible_number_of_coins(
             self,
-            input_cents,
-            output_coins
+            input_cents: int,
+            output_coins: list[int, int, int, int]
     ) -> None:
         assert get_coin_combination(input_cents) == output_coins
