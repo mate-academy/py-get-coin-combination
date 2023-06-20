@@ -6,8 +6,14 @@ from app.main import get_coin_combination
 @pytest.mark.parametrize(
     "cents, expected_result",
     [
-        pytest.param(17, [2, 1, 1, 0], id="17 cents should return different coins"),
-        pytest.param(6, [1, 1, 0, 0], id="6 cents should return coins of the different types")
+        pytest.param(
+            17,
+            [2, 1, 1, 0],
+            id="17 cents should return different coins"),
+        pytest.param(
+            6,
+            [1, 1, 0, 0],
+            id="6 cents should return coins of the different types")
 
     ]
 )
