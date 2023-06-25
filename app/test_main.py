@@ -24,7 +24,8 @@ class TestGetCoinCombination:
             pytest.param(
                 17,
                 [2, 1, 1, 0],
-                id="When  cents > 15 return 2 pennies + 1 nickel + 1 dime = [2, 1, 1, 0]"
+                id="When cents > 15 return 2 pennies"
+                   " + 1 nickel + 1 dime = [2, 1, 1, 0]"
             ),
             pytest.param(
                 50,
@@ -34,6 +35,6 @@ class TestGetCoinCombination:
         ]
     )
     def test_coin_combination(self,
-                          cents: int,
-                          coins: list[int]) -> None:
+                              cents: int,
+                              coins: list[int]) -> None:
         assert get_coin_combination(cents) == coins
