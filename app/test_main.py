@@ -2,6 +2,7 @@ from __future__ import annotations
 from app.main import get_coin_combination
 import pytest
 
+
 def test_should_return_type_list() -> None:
     assert (
         isinstance(get_coin_combination(23), list) is True
