@@ -9,4 +9,4 @@ def get_coin_combination(cents: int) -> list:
     return coins
 
 
-print(get_coin_combination(130))
+print(get_coin_combination(1))
