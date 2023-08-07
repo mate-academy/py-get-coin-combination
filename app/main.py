@@ -7,3 +7,8 @@ def get_coin_combination(cents: int) -> list:
         cents -= coins[i] * values[i]
 
     return coins
+
+
+ttt = get_coin_combination(67) # == [2, 1, 1, 0]
+yyy = 0
+
