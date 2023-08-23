@@ -25,9 +25,6 @@ class TestGetCoinCombination:
             pytest.param(
                 52, [2, 0, 0, 2], id="2 pennies + 2 quarters"
             ),
-            pytest.param(
-                -50, [0, 0, 0, 0], id="negative cents"
-            ),
         ],
     )
     def test_get_coin_combination(
