@@ -25,7 +25,6 @@ class TestCoinCombination:
             ),
         ],
     )
-
     def test_get_coin_combination(
             self,
             coins: int,
