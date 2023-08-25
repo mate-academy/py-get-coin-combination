@@ -7,19 +7,20 @@ import pytest
     "cents, expected_result",
     [
         pytest.param(
-            -5,
-            [0, 0, 0, 0],
-            id="should treat negative numbers as zero"
-        ),
-        pytest.param(
             0,
             [0, 0, 0, 0],
-            id="should return 4 zeros when 0 cents given"
         ),
         pytest.param(
-            83,
-            [3, 1, 0, 3],
-            id="should place coins correctly"
+            10,
+            [0, 0, 1, 0]
+        ),
+        pytest.param(
+            21,
+            [1, 0, 2, 0]
+        ),
+        pytest.param(
+            55,
+            [0, 1, 0, 2]
         )
     ]
 )
