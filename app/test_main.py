@@ -1,6 +1,6 @@
-from app.main import get_coin_combination
-
 import pytest
+
+from app.main import get_coin_combination
 
 
 class TestCoinCombination:
