@@ -33,4 +33,3 @@ def test_check_right_answers(
         expected_result: list
 ) -> None:
     assert get_coin_combination(cents) == expected_result
-
