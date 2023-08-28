@@ -49,5 +49,9 @@ class TestCoinCombination:
             )
         ]
     )
-    def test_cat_and_dog_years(self, coins: int, expected_result: list) -> None:
+    def test_cat_and_dog_years(
+            self,
+            coins: int,
+            expected_result: list
+    ) -> None:
         assert get_coin_combination(coins) == expected_result
