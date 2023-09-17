@@ -15,11 +15,11 @@ from app.main import get_coin_combination
     (123, [3, 0, 2, 4]),
     (50, [0, 0, 5, 0]),
 ])
-def test_get_coin_combination(cents, expected_coins):
+def test_get_coin_combination(cents: int, expected_coins: int) -> None:
     assert get_coin_combination(cents) == expected_coins
 
 
-def test_negative_cents():
+def test_negative_cents() -> None:
     with pytest.raises(ValueError):
         get_coin_combination(-1)
 
