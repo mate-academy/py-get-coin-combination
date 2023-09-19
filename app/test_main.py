@@ -1,5 +1,6 @@
 import pytest
 from app.main import get_coin_combination
+from typing import Any
 
 
 @pytest.mark.parametrize(
@@ -47,8 +48,9 @@ from app.main import get_coin_combination
         )
     ]
 )
-def test_get_coin_combination(amount, expected) -> int:
+def test_get_coin_combination(amount: int, expected: list) -> int:
     assert get_coin_combination(amount) == expected
+
 
 @pytest.mark.parametrize(
     "cents, expected",
@@ -65,6 +67,6 @@ def test_get_coin_combination(amount, expected) -> int:
         )
     ]
 )
-def test_errors(cents, expected) -> None:
+def test_errors(cents: Any, expected: Any) -> None:
     with pytest.raises(expected):
         get_coin_combination(cents)
