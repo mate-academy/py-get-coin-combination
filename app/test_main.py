@@ -15,3 +15,15 @@ def test_get_coin_combination_17_cents() -> None:
 
 def test_get_coin_combination_50_cents() -> None:
     assert get_coin_combination(50) == [0, 0, 0, 2]
+
+
+def test_get_coin_combination_negative_cents() -> None:
+    assert get_coin_combination(-5) == [0, 0, 0, 0]
+
+
+def test_get_coin_combination_large_amount() -> None:
+    assert get_coin_combination(9999) == [99, 0, 0, 399]
+
+
+def test_get_coin_combination_invalid_type() -> None:
+    assert get_coin_combination("go") == [0, 0, 0, 0]
