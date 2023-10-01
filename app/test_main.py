@@ -1,3 +1,6 @@
+import pytest
+
+
 from app.main import get_coin_combination
 
 
@@ -18,12 +21,14 @@ def test_get_coin_combination_50_cents() -> None:
 
 
 def test_get_coin_combination_negative_cents() -> None:
-    assert get_coin_combination(-5) == [0, 0, 0, 0]
+    with pytest.raises(ValueError):
+        get_coin_combination(-5)
 
 
 def test_get_coin_combination_large_amount() -> None:
-    assert get_coin_combination(9999) == [99, 0, 0, 399]
+    assert get_coin_combination(9999) == [4, 0, 2, 399]
 
 
 def test_get_coin_combination_invalid_type() -> None:
-    assert get_coin_combination("go") == [0, 0, 0, 0]
+    with pytest.raises(TypeError):
+        get_coin_combination("gogo")
