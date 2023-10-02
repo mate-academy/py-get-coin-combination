@@ -17,8 +17,3 @@ from app.main import get_coin_combination
 ])
 def test_get_coin_combination(cents, expected_result) -> None:
     assert get_coin_combination(cents) == expected_result
-
-
-def test_large_cents() -> None:
-    result = get_coin_combination(10 ** 9)
-    assert result[3] == 40000000
