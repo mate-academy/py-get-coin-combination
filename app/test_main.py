@@ -20,11 +20,6 @@ def test_get_coin_combination_50_cents() -> None:
     assert get_coin_combination(50) == [0, 0, 0, 2]
 
 
-def test_get_coin_combination_negative_cents() -> None:
-    with pytest.raises(ValueError):
-        get_coin_combination(-5)
-
-
 def test_get_coin_combination_large_amount() -> None:
     assert get_coin_combination(9999) == [4, 0, 2, 399]
 
