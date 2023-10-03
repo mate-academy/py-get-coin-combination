@@ -16,5 +16,5 @@ from app.main import get_coin_combination
     (11, [1, 0, 1, 0]),  # 1 penny + 1 dime
     (32, [2, 1, 0, 1]),  # 2 pennies + 1 nickel + 1 quarter
 ])
-def test_get_coin_combination(cents, expected_result) -> None:
+def test_get_coin_combination(cents: int, expected_result: list[int]) -> None:
     assert get_coin_combination(cents) == expected_result
