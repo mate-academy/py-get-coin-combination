@@ -13,5 +13,10 @@ class TestGetCoinCombinationClass:
             (50, [0, 0, 0, 2])
         ]
     )
-    def test_valus_get_coins_combination(self, cents: int, result: list) -> None:
+    def test_values_get_coins_combination(
+            self,
+            cents: int,
+            result: list
+    ) -> None:
+
         assert get_coin_combination(cents) == result
