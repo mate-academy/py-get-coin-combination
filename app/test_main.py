@@ -11,15 +11,15 @@ from app.main import get_coin_combination
             id="should add penny to the list"
         ),
         pytest.param(
-            5, [1, 1, 0, 0],
+            5, [0, 1, 0, 0],
             id="should add nickel to the list"
         ),
         pytest.param(
-            10, [2, 1, 1, 0],
+            10, [0, 0, 1, 0],
             id="should add dime to the list"
         ),
         pytest.param(
-            25, [0, 0, 0, 2],
+            25, [0, 0, 0, 1],
             id="should add quarters to the list"
         ),
         pytest.param(
