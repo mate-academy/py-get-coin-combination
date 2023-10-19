@@ -12,5 +12,5 @@ from app.main import get_coin_combination
         (50, [0, 0, 0, 2])
     ]
 )
-def test_super(init_int, expected_list):
+def test_super(init_int: int, expected_list: list) -> None:
     assert get_coin_combination(init_int) == expected_list
