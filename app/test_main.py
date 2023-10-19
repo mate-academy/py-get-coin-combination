@@ -61,6 +61,19 @@ def test_equivalence_classes_and_different_filling_list(
     assert get_coin_combination(cents) == specific_coins
 
 
-def test_invalid_data_type() -> None:
-    with pytest.raises(TypeError):
-        get_coin_combination([1])
+@pytest.mark.parametrize(
+    "cents,expected_error",
+    [
+        pytest.param(
+            (1,),
+            TypeError,
+            id="should return error with not numeric parameters"
+        )
+    ]
+)
+def test_invalid_data_type(
+        cents: Any,
+        expected_error: Exception
+) -> None:
+    with pytest.raises(expected_error):
+        get_coin_combination(cents)
