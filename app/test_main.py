@@ -13,7 +13,7 @@ from app.main import get_coin_combination
     ]
 )
 def test_conversion_of_cents(cents: int, result: list) -> None:
-    assert(
+    assert (
         get_coin_combination(cents) == result
     ), ("Conversion of cents should equal to {result}."
         "Where [penny, nickel, dime, quarters]")
