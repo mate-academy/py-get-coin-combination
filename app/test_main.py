@@ -1,5 +1,3 @@
-import pytest
-
 from app.main import get_coin_combination
 
 
@@ -28,6 +26,6 @@ def test_should_return_one_quarter_when_cents_is_25() -> None:
     assert result == [0, 0, 0, 1]
 
 
-def test_get_coin_combination_returns_mixed_coins():
+def test_get_coin_combination_returns_mixed_coins() -> None:
     result = get_coin_combination(41)
     assert result == [1, 1, 1, 1]
