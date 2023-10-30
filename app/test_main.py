@@ -12,5 +12,8 @@ from app.main import get_coin_combination
         (50, [0, 0, 0, 2]),
     ]
 )
-def test_should_return_expected_combinations(amount, expected):
+def test_should_return_expected_combinations(
+        amount: int,
+        expected: list
+) -> None:
     assert expected == get_coin_combination(amount)
