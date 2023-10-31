@@ -11,6 +11,7 @@ def test_should_not_accept_negative_input_value() -> None:
 @pytest.mark.parametrize(
     "cents, result",
     [
+        (0, [0, 0, 0, 0]),
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
         (17, [2, 1, 1, 0]),
