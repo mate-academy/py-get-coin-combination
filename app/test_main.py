@@ -3,6 +3,11 @@ import pytest
 from app.main import get_coin_combination
 
 
+def test_should_not_accept_negative_input_value() -> None:
+    with pytest.raises(ValueError):
+        get_coin_combination(-1)
+
+
 @pytest.mark.parametrize(
     "cents, result",
     [
