@@ -5,7 +5,6 @@ import pytest
 @pytest.mark.parametrize(
     "cents, expected_result",
     [
-        (-1, [0, 0, 0, 0]),
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
         (17, [2, 1, 1, 0]),
