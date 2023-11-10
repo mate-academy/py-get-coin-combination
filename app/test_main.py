@@ -4,7 +4,7 @@ from app.main import get_coin_combination
 
 
 @pytest.mark.parametrize(
-    "cents, excepted",
+    "cents, expected",
     [
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
@@ -18,6 +18,6 @@ from app.main import get_coin_combination
 )
 def test_coin_combination_with_different_numbers(
         cents: int,
-        excepted: list
+        expected: list
 ) -> None:
-    assert get_coin_combination(cents) == excepted
+    assert get_coin_combination(cents) == expected
