@@ -26,7 +26,7 @@ def test_coin_combination_for_large_amount() -> None:
 
 
 def test_coin_combination_for_same_amount_different_order() -> None:
-    assert get_coin_combination(25) == [0, 0, 1, 0]
+    assert get_coin_combination(25) == [0, 0, 0, 1]
 
 
 def test_coin_combination_for_large_amount_with_no_quarters() -> None:
