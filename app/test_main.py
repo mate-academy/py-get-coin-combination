@@ -39,4 +39,3 @@ class TestGetCoinCombination:
     ) -> None:
         with pytest.raises(TypeError):
             get_coin_combination(invalid_input)
-
