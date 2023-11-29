@@ -8,6 +8,9 @@ class TestGetCoinCombination:
         "cents,pennies,nickels,dimes,quarters",
         [
             pytest.param(
+                0, 0, 0, 0, 0, id="tests all coins are zeroes"
+            ),
+            pytest.param(
                 3, 3, 0, 0, 0, id="tests only pennies"
             ),
             pytest.param(
