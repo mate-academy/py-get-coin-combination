@@ -19,7 +19,7 @@ from app.main import get_coin_combination
     ]
 )
 def test_can_get_coin_combination(coins: int, result: list) -> None:
-    assert(
+    assert (
         get_coin_combination(coins) == result
     ), f"Function get_coin_combination should return" \
        f" {result} for {coins}"
