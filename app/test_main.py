@@ -38,4 +38,6 @@ def test_nest(
         input_classes: int, expected_result: list[int]
 ) -> None:
 
-    pass
+    result = get_coin_combination(input_classes)
+
+    assert result == expected_result
