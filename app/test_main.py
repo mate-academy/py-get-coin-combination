@@ -15,7 +15,7 @@ from app.main import get_coin_combination
         (47, [2, 0, 2, 1]),
     ]
 )
-def test_should_return_idk_what(cents: int, coins_list: list) -> None:
+def test_check_test_coin_combinations(cents: int, coins_list: list) -> None:
     assert get_coin_combination(cents) == coins_list
 
 
