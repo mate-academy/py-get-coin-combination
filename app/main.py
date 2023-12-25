@@ -1,4 +1,8 @@
 def get_coin_combination(cents: int) -> list:
+    """
+    >>> get_coin_combination(99)
+    [4, 0, 2, 3]
+    """
     values = [1, 5, 10, 25]
     coins = [0, 0, 0, 0]
 
