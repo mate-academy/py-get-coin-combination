@@ -17,7 +17,7 @@ class TestGetCoinCombination:
             (25, [0, 0, 0, 1])
         ]
     )
-    def test_get_human_age(
+    def test_get_coin_combination(
             self,
             coin: int,
             combination: List[int]
