@@ -4,7 +4,7 @@ from app.main import get_coin_combination
 from typing import List
 
 
-class TestAddCssClass:
+class TestGetCoinCombination:
     @pytest.mark.parametrize(
         "coin, combination", [
             (0, [0, 0, 0, 0]),
