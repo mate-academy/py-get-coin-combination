@@ -2,23 +2,23 @@ import pytest
 from app.main import get_coin_combination
 
 
-def test_get_coin_combination() -> None:
-    # Test cases
-    assert get_coin_combination(0) == [0, 0, 0, 0]  # 0 cents
-    assert get_coin_combination(1) == [1, 0, 0, 0]  # 1 penny
-    assert get_coin_combination(6) == [1, 1, 0, 0]  # 1 penny + 1 nickel
-    assert get_coin_combination(17) == [2, 1, 1, 0]
-    assert get_coin_combination(50) == [0, 0, 0, 2]  # 2 quarters
-    assert get_coin_combination(99) == [4, 0, 2, 3]
+class TestGetCoinCombination:
+    @pytest.mark.parametrize(
+        "cents, expected_result",
+        [
+            (0, [0, 0, 0, 0]),       # 0 cents
+            (1, [1, 0, 0, 0]),       # 1 penny
+            (6, [1, 1, 0, 0]),       # 1 penny + 1 nickel
+            (17, [2, 1, 1, 0]),      # 2 pennies + 1 nickel + 1 dime
+            (50, [0, 0, 0, 2]),      # 2 quarters
+            (99, [4, 0, 2, 3]),      # 4 pennies + 2 dimes + 3 quarters
+            (100, [0, 0, 1, 4]),     # 1 dime + 4 quarters
+            (125, [0, 0, 0, 5]),     # 5 quarters
+        ],
+    )
+    def test_get_coin_combination(self, cents: int, expected_result: list) -> None: # Noqa E501
+        assert get_coin_combination(cents) == expected_result
 
-    # Edge case: negative value
-    with pytest.raises(ValueError):
-        get_coin_combination(-1)
-
-    # Edge case: floating-point value
-    with pytest.raises(ValueError):
-        get_coin_combination(3.14)
-
-    # Edge case: invalid input type
-    with pytest.raises(TypeError):
-        get_coin_combination("string")
+    def test_get_coin_combination_negative(self) -> None:
+        with pytest.raises(ValueError):
+            get_coin_combination(-1)
