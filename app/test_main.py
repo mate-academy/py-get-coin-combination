@@ -22,4 +22,3 @@ class TestGetCoinCombination:
     def test_get_coin_combination_negative(self) -> None:
         with pytest.raises(ValueError):
             get_coin_combination(-1)
-
