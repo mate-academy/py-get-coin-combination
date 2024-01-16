@@ -21,7 +21,7 @@ class TestGetCoinCombination:
 
     def test_get_coin_combination_negative(self, monkeypatch: pytest.MonkeyPatch) -> None: # Noqa E501
         # Monkeypatching the get_coin_combination function for negative values
-        def mock_get_coin_combination(cents: int) -> None:
+        def mock_get_coin_combination(cents: int) -> list:
             if cents < 0:
                 raise ValueError("Input value must be non-negative")
             return get_coin_combination(cents)
@@ -30,5 +30,5 @@ class TestGetCoinCombination:
         monkeypatch.setattr('app.main.get_coin_combination', mock_get_coin_combination) # Noqa E501
 
         # Testing the negative case
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="Input value must be non-negative"): # Noqa E501
             get_coin_combination(-1)
