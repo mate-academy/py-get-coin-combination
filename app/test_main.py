@@ -43,6 +43,6 @@ from app.main import get_coin_combination
 )
 def test_return_combination_correctly(
     cents: int,
-    expected_result: list
+    expected_result: list[int]
 ) -> None:
     assert get_coin_combination(cents) == expected_result
