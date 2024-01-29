@@ -22,4 +22,4 @@ def test_zero_cents() -> None:
 
 
 def test_large_value() -> None:
-    assert get_coin_combination(99) == [4, 1, 2, 3]
+    assert get_coin_combination(99) == [4, 0, 2, 3]
