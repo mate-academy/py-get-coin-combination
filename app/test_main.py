@@ -12,5 +12,8 @@ from app.main import get_coin_combination
         pytest.param(50, [0, 0, 0, 2], id="2 quarters")
     ]
 )
-def test_get_coin_combination(cents: int, result: list):
-    assert get_coin_combination(cents) == result, f"If sum is {cents}, result should be equal to {result}"
+def test_get_coin_combination(cents: int, result: list) -> None:
+    assert get_coin_combination(cents) == result, (
+        f"If sum is {cents}, "
+        f"result should be equal to {result}"
+    )
