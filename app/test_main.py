@@ -1,7 +1,7 @@
 import pytest
 from app.main import get_coin_combination
 
-pytest.mark.parametrize(
+@pytest.mark.parametrize(
     "coins,result",
     [
         pytest.param(1, [1, 0, 0, 0],
@@ -14,8 +14,6 @@ pytest.mark.parametrize(
                      id="should return 2 quarters")
     ]
 )
-
-
 def test_coin_combination(
         coins: int,
         result: list
