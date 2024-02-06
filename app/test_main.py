@@ -20,7 +20,11 @@ def test_get_coin_combination() -> None:
 
 
 def test_get_coin_combination_minimal_coins() -> None:
-    assert get_coin_combination(4) == [4, 0, 0, 0]  # 4 pennies, not 2x2 pennies
-    assert get_coin_combination(7) == [2, 1, 0, 0]  # 2 pennies + 1 nickel, not 7 pennies
-    assert get_coin_combination(16) == [1, 0, 1, 0]  # 1 penny + 1 dime, not 1 penny + 2 nickels
-    assert get_coin_combination(30) == [0, 1, 0, 1]  # 1 nickel + 1 quarter, not 3 dimes
+    assert get_coin_combination(4) == [4, 0, 0, 0]
+    # 4 pennies, not 2x2 pennies
+    assert get_coin_combination(7) == [2, 1, 0, 0]
+    # 2 pennies + 1 nickel, not 7 pennies
+    assert get_coin_combination(16) == [1, 0, 1, 0]
+    # 1 penny + 1 dime, not 1 penny + 2 nickels
+    assert get_coin_combination(30) == [0, 1, 0, 1]
+    # 1 nickel + 1 quarter, not 3 dimes
