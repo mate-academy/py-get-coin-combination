@@ -26,7 +26,7 @@ class TestGetHumanAge:
                          id="should_return_two_quarters_for_50_cents"),
             pytest.param(99, [4, 0, 2, 3],
                          id="should_return_4_0_2_3_for_99_cents"),
-           ]
+        ]
     )
     def test_returns_correct_coins(self, cents: int, coins: list[int]) -> None:
         assert get_coin_combination(cents) == coins
