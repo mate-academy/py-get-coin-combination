@@ -19,5 +19,8 @@ import pytest
             id="Test 4: 41 cent = [1, 1, 1, 1]"),
     ]
 )
-def test_should_return_list_with_1_position(cents: int, result: list[int]) -> None:
+def test_should_return_list_with_1_position(
+        cents: int,
+        result: list[int]
+) -> None:
     assert get_coin_combination(cents) == result
