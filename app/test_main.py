@@ -1,5 +1,5 @@
 import pytest
-
+from typing import Type
 from app.main import get_coin_combination
 
 
@@ -31,7 +31,7 @@ class TestGetCoin:
     def test_raising_error(
             self,
             initial_element: int,
-            expected_error: ExceptionGroup
+            expected_error: Type[BaseException]
     ) -> None:
         with pytest.raises(expected_error):
             get_coin_combination(initial_element)
