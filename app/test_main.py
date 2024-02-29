@@ -32,6 +32,6 @@ class TestGetCoin:
             self,
             initial_element: int,
             expected_error: ExceptionGroup
-            ) -> None:
+    ) -> None:
         with pytest.raises(expected_error):
             get_coin_combination(initial_element)
