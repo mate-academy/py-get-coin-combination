@@ -1,17 +1,13 @@
+import pytest
+
 from app.main import get_coin_combination
 
 
-def test_get_coin_combination_1_cent() -> None:
-    assert get_coin_combination(1) == [1, 0, 0, 0]
-
-
-def test_get_coin_combination_6_cents() -> None:
-    assert get_coin_combination(6) == [1, 1, 0, 0]
-
-
-def test_get_coin_combination_17_cents() -> None:
-    assert get_coin_combination(17) == [2, 1, 1, 0]
-
-
-def test_get_coin_combination_50_cents() -> None:
-    assert get_coin_combination(50) == [0, 0, 0, 2]
+@pytest.mark.parametrize("cents, expected_coins", [
+    (1, [1, 0, 0, 0]),    # 1 penny
+    (6, [1, 1, 0, 0]),    # 1 penny + 1 nickel
+    (17, [2, 1, 1, 0]),   # 2 pennies + 1 nickel + 1 dime
+    (50, [0, 0, 0, 2])    # 2 quarters
+])
+def test_get_coin_combination(cents, expected_coins):
+    assert get_coin_combination(cents) == expected_coins
