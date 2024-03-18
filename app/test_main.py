@@ -13,7 +13,7 @@ from app.main import get_coin_combination
 
 
 ])
-def test_human_age_conversion(
+def test_get_coin_combination(
         cents: int, expected_result: list
 ) -> None:
     assert get_coin_combination(cents) == expected_result
