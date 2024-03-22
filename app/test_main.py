@@ -36,4 +36,3 @@ def test_for_random_cent_return_valid_list() -> None:
     assert get_coin_combination(116) == [1, 1, 1, 4]
     assert get_coin_combination(354) == [4, 0, 0, 14]
     assert get_coin_combination(1488) == [3, 0, 1, 59]
-
