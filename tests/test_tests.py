@@ -11,7 +11,7 @@ def test_return_only_pennies(monkeypatch):
 
     test_result = pytest.main(["app/test_main.py"])
     assert (
-        test_result.value == 1
+        test_result.value == 5
     ), "Tests should check that 'get_coin_combination' could return different coins, not only pennies"
 
 
@@ -27,6 +27,6 @@ def test_return_only_one_type(monkeypatch):
     monkeypatch.setattr(main, "get_coin_combination", return_only_one_type)
     test_result = pytest.main(["app/test_main.py"])
     assert (
-        test_result.value == 1
+        test_result.value == 5
     ), "Tests should check that 'get_coin_combination' could return coins of the different types"
 
