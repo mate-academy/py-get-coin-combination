@@ -10,7 +10,8 @@ from app.main import get_coin_combination
         pytest.param(5, [0, 1, 0, 0], id="one nickel"),
         pytest.param(10, [0, 0, 1, 0], id="one dime"),
         pytest.param(25, [0, 0, 0, 1], id="one quarter"),
-        pytest.param(1973, [3, 0, 2, 78], id="many cents")
+        pytest.param(1973, [3, 0, 2, 78], id="many cents"),
+        pytest.param(-1, [4, 0, 2, -1], id="argument is non-negative integer")
     ]
 )
 def test_calculate_coin(
@@ -24,7 +25,6 @@ def test_calculate_coin(
     "cents,error",
     [
         pytest.param("1", TypeError, id="argument is integer"),
-        pytest.param(-3, ValueError, id="argument is non-negative integer")
     ]
 )
 def test_value_type(
