@@ -4,13 +4,12 @@ import pytest
 from app.main import get_coin_combination
 
 
-class Money:
-    @pytest.mark.parametrize(
+@pytest.mark.parametrize(
         "cents, result",
         [
             pytest.param(
                 1,
-                [1, 1, 0, 0],
+                [1, 0, 0, 0],
                 id="one penny"
             ),
             pytest.param(
@@ -25,6 +24,5 @@ class Money:
             ),
         ]
     )
-    def test_modify_class(self, cents: int,
-                          result: list[int]) -> None:
+def test_modify_class(cents: int, result: list[int]) -> None:
         assert get_coin_combination(cents) == result
