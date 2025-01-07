@@ -5,7 +5,7 @@ from app.main import get_coin_combination
 
 
 @pytest.mark.parametrize(
-    "cents, result",[
+    "cents, result", [
         (0, [0, 0, 0, 0]),
         (1, [1, 0, 0, 0]),
         (5, [0, 1, 0, 0]),
@@ -21,6 +21,5 @@ from app.main import get_coin_combination
         (10000, [0, 0, 0, 400]),
     ]
 )
-
 def test_get_coin_combination(cents: int, result: list) -> None:
     assert get_coin_combination(cents) == result
