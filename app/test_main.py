@@ -37,5 +37,5 @@ class TestCoinCombination:
             self,
             cents: int,
             expected_coin_combination: list
-    ):
+    ) -> None:
         assert get_coin_combination(cents) == expected_coin_combination
