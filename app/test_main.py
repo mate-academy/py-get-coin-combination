@@ -21,5 +21,5 @@ def test_should_return_correct_length() -> None:
         (99, [4, 0, 2, 3]),
     ]
 )
-def test_coin_combination_results(cents, expected) -> None:
+def test_coin_combination_results(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
