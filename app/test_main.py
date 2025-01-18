@@ -2,11 +2,11 @@ import pytest
 from app.main import get_coin_combination
 
 
-def test_should_return_list():
+def test_should_return_list() -> None:
     assert isinstance(get_coin_combination(1), list)
 
 
-def test_should_return_correct_length():
+def test_should_return_correct_length() -> None:
     assert len(get_coin_combination(1)) == 4
 
 
@@ -21,5 +21,5 @@ def test_should_return_correct_length():
         (99, [4, 0, 2, 3]),
     ]
 )
-def test_coin_combination_results(cents, expected):
+def test_coin_combination_results(cents, expected) -> None:
     assert get_coin_combination(cents) == expected
