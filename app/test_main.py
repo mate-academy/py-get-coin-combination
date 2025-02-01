@@ -23,7 +23,7 @@ def test_only_quarters() -> None:
 
 
 def test_combination_quarters_and_dimes() -> None:
-    assert get_coin_combination(65) == [0, 0, 1, 2]
+    assert get_coin_combination(65) == [0, 1, 1, 2]
 
 
 def test_combination_all_coins() -> None:
