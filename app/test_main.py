@@ -19,5 +19,5 @@ from app.main import get_coin_combination
 )
 def test_(coins: int, result: list) -> None:
     assert (
-            get_coin_combination(coins) == result
+        get_coin_combination(coins) == result
     ), f" {coins} penny  should be equal to list {result}"
