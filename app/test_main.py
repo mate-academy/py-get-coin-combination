@@ -19,6 +19,8 @@ def test_should_calculate_num_of_coins_correctly(
     assert get_coin_combination(amount) == coins_list
 
 
-def test_should_return_value_error_if_amount_is_negative_number() -> None:
+@pytest.mark.parametrize("negative_amount", [(-1)])
+def test_should_return_value_error_if_amount_is_negative_number(
+        negative_amount: int) -> None:
     with pytest.raises(ValueError):
-        get_coin_combination(-1)
+        get_coin_combination(negative_amount)
