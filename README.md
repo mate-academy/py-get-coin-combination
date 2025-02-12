@@ -1,6 +1,6 @@
 # Coin combination
 
-- Read [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start
+Read [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start.
 
 
 Write tests for `get_coin_combination` function that takes a non-negative integer
@@ -12,6 +12,8 @@ The function should return a list where:
 - `coins[1]` = number of nickels (1 nickel = 5 cents);
 - `coins[2]` = number of dimes (1 dime = 10 cents);
 - `coins[3]` = number of quarters (1 quarter = 25 cents).
+
+**Please note:** you have to use `pytest` for writing tests.
 
 Examples:
 ```python
