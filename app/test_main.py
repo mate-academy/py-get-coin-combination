@@ -29,7 +29,7 @@ def test_coins_selected_correctly(cents: int,
     [
         ("1"),
         ([1, 1, 0, 0]),
-        ({"cents": 100}),
+        ({"cents": 101}),
         (tuple("aadfa")),
         (set("asdf"))
     ],
