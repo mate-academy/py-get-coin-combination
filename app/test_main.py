@@ -22,5 +22,7 @@ class TestGetCoinCombination:
             "checkin with 9999 coin (big value)"
         ]
     )
-    def test_coin_correct_value(self, cents: int, expected_coins: list) -> None:
+    def test_coin_correct_value(self,
+                                cents: int,
+                                expected_coins: list) -> None:
         assert get_coin_combination(cents) == expected_coins
