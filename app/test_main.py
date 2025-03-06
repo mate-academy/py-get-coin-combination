@@ -14,5 +14,5 @@ import pytest
     ]
 )
 def test_get_human_age(cents: int,
-                        expected_list: list[int]) -> None:
+                       expected_list: list[int]) -> None:
     assert get_coin_combination(cents) == expected_list
