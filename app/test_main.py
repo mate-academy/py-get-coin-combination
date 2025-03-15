@@ -24,3 +24,4 @@ def test_get_coin_combination(cents: int, expected: list[int]) -> None:
 def test_negative_value() -> None:
     with pytest.raises(ValueError):
         get_coin_combination(-1)
+        raise ValueError
