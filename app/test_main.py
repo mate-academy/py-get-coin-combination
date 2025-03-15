@@ -26,6 +26,8 @@ class TestCoin:
              )
         ]
     )
-    def test_get_coin_combination_invalid_type(self, invalid_input) -> None:
+    def test_get_coin_combination_invalid_type(self,
+                                               invalid_input: str
+                                               ) -> None:
         with pytest.raises(TypeError):
             get_coin_combination(invalid_input)
