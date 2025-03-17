@@ -1,6 +1,7 @@
 from app.main import get_coin_combination
 import pytest
 
+
 @pytest.mark.parametrize(
     "total_value, result",
     [
@@ -21,8 +22,9 @@ import pytest
         )
     ]
 )
-def test_get_coin_combination(total_value, result):
+def test_get_coin_combination(total_value: int, result: list) -> None:
     assert get_coin_combination(total_value) == result
+
 
 @pytest.mark.parametrize(
     "total_value",
@@ -41,6 +43,6 @@ def test_get_coin_combination(total_value, result):
         )
     ]
 )
-def test_get_coin_combination_invalid(total_value):
+def test_get_coin_combination_invalid(total_value: int) -> None:
     with pytest.raises(TypeError):
         get_coin_combination(total_value)
