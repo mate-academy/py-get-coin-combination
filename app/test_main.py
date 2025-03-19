@@ -20,5 +20,5 @@ from app.main import get_coin_combination
 def test_output_result(
         coins: int, penny: int,
         nickel: int, dime: int, quarters: int
-    ) -> None:
+) -> None:
     assert get_coin_combination(coins) == [penny, nickel, dime, quarters]
