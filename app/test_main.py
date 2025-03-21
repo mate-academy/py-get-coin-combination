@@ -30,8 +30,8 @@ def test_with_different_input(input_coins: int, expected_result: list) -> None:
     "input_coins,expected_error",
     [
         pytest.param(
-            -5, ValueError,
-            id="Should raise ValueError if value is negative"
+            [1], TypeError,
+            id="Should raise TypeError if value is invalid"
         ),
         pytest.param(
             "123", TypeError,
