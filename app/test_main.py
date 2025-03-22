@@ -20,7 +20,7 @@ class TestCoinCombination:
             (25, [0, 0, 0, 1]),         # exactly one quarter
             (26, [1, 0, 0, 1]),         # penny + quarter
             (30, [0, 1, 0, 1]),         # nickel + quarter
-            (35, [1, 1, 0, 1]),         # penny + nickel + quarter
+            (35, [0, 0, 1, 1]),         # dime + quarter
             (41, [1, 1, 1, 1]),         # one of each coin
             (99, [4, 0, 2, 3]),         # complex combination
             (1234, [4, 1, 0, 49])       # large value — stress test
