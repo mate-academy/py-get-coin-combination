@@ -7,9 +7,9 @@ class TestCoinsNeeded:
         "cents,expected_coins",
         [
             pytest.param(
-               0,
-               [0, 0, 0, 0],
-               id="test no money 😢"
+                0,
+                [0, 0, 0, 0],
+                id="test no money 😢"
             ),
             pytest.param(
                 1,
