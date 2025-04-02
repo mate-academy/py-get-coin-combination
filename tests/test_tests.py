@@ -1,4 +1,4 @@
-from app import main
+import app.main as main
 
 
 def test_return_only_pennies(monkeypatch):
