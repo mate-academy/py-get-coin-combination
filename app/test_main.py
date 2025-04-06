@@ -1,21 +1,18 @@
 from app.main import get_coin_combination
+import pytest
 
 
-def test_get_coin_combination_returns_one_penny_for_1_cent():
-    assert get_coin_combination(1) == [1, 0, 0, 0]
-
-
-def test_get_coin_combination_returns_penny_and_nickel_for_6_cents():
-    assert get_coin_combination(6) == [1, 1, 0, 0]
-
-
-def test_get_coin_combination_returns_penny_nickel_dime_for_17_cents():
-    assert get_coin_combination(17) == [2, 1, 1, 0]
-
-
-def test_get_coin_combination_returns_two_quarters_for_50_cents():
-    assert get_coin_combination(50) == [0, 0, 0, 2]
-
-
-def test_get_coin_combination_returns_all_coin_types_for_41_cents():
-    assert get_coin_combination(41) == [1, 1, 1, 1]
+@pytest.mark.parametrize(
+    "cents, result",
+    [
+        pytest.param(0, [0, 0, 0, 0], id="0 penny for 0 cent"),
+        pytest.param(1, [1, 0, 0, 0], id="penny for cent"),
+        pytest.param(6, [1, 1, 0, 0], id="penny and nickel for 6 cents"),
+        pytest.param(17, [2, 1, 1, 0], id="2 pennies, nickel and dime for 17 cents"),
+        pytest.param(50, [0, 0, 0, 2], id="2 quarters for 50 cents"),
+        pytest.param(41, [1, 1, 1, 1], id="penny, nickel, dime and quarter for 41 cents")
+    ]
+)
+def test_get_coin_combination(
+        cents: int, result: list) -> None:
+    assert get_coin_combination(cents) == result
