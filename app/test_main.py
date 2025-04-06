@@ -8,11 +8,10 @@ from app.main import get_coin_combination
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
         (17, [2, 1, 1, 0]),
-        (50, [0, 0, 0, 2])
-
+        (50, [0, 0, 0, 2]),
     ]
 )
-def test_get_coin_combination(cent, result) -> None:
+def test_get_coin_combination(cent: int, result: list) -> None:
     assert (
-            get_coin_combination(cent) == result
-    )
+        get_coin_combination(cent) == result
+    ), f"result for {cent} = {result}"
