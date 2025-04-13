@@ -16,6 +16,7 @@ from app.main import get_coin_combination
 def test_get_coin_combination(cents: int, result: list) -> None:
     assert get_coin_combination(cents) == result
 
+
 def test_incorrect_value() -> None:
     with pytest.raises(TypeError):
         get_coin_combination("2")
