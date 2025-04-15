@@ -22,7 +22,9 @@ def test_get_coin_combination_examples(cents: int, expected: List[int]) -> None:
     assert result == expected
 
 
-@pytest.mark.parametrize("cents", [0, 1, 6, 10, 17, 25, 50, 41, 99, 123])
+@pytest.mark.parametrize(
+    "cents", [0, 1, 6, 10, 17, 25, 50, 41, 99, 123]
+)
 def test_get_coin_combination_structure(cents: int) -> None:
     """
     Check that:
