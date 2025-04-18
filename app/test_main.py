@@ -18,5 +18,8 @@ from .main import get_coin_combination
         "should return 2 quarters"
     ]
 )
-def test_correctness_of_coins_conversion(number_of_cents, expected_output) -> None:
+def test_correctness_of_coins_conversion(
+        number_of_cents: int,
+        expected_output: list[int]
+) -> None:
     assert get_coin_combination(number_of_cents) == expected_output
