@@ -18,6 +18,9 @@ class TestGetCoinCombination:
             "2 quarters"
         ]
     )
-
-    def test_get_coin_combination_correctly(self, cents: int, result: list) -> None:
+    def test_get_coin_combination_correctly(
+            self,
+            cents: int,
+            result: list
+    ) -> None:
         assert get_coin_combination(cents) == result
