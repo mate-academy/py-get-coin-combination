@@ -29,7 +29,7 @@ class TestModify:
 
         ]
     )
-    def test_modify(self, cents, result) -> None:
+    def test_modify(self, cents: int, result: list) -> None:
         assert isinstance(cents, int), "Please enter an integer"
         assert cents > 0, "Please enter a positive number"
         assert get_coin_combination(cents) == result
