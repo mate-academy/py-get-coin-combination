@@ -15,6 +15,3 @@ import pytest
 ])
 def test_get_coin_combination(value: int, expected: int) -> int:
     assert get_coin_combination(value) == expected
-
-
-
