@@ -1,6 +1,7 @@
 from app.main import get_coin_combination
 import pytest
 
+
 @pytest.mark.parametrize("value, expected", [
     (0, [0, 0, 0, 0]),
     (1, [1, 0, 0, 0]),
@@ -12,7 +13,8 @@ import pytest
     (50, [0, 0, 0, 2]),
     (99, [4, 0, 2, 3]),
 ])
-def test_get_coin_combination(value, expected):
+def test_get_coin_combination(value: int, expected: int) -> int:
     assert get_coin_combination(value) == expected
+
 
 
