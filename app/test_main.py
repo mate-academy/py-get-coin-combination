@@ -15,7 +15,8 @@ from app.main import get_coin_combination
         pytest.param(0, [0, 0, 0, 0], id="Should return zeros in every parts")
     ]
 )
-def test_get_coin_combination(amount_of_coins: int, coin_parts: list[int]) -> None:
+def test_get_coin_combination(amount_of_coins: int,
+                              coin_parts: list[int]) -> None:
     assert (
         get_coin_combination(amount_of_coins) == coin_parts
     )
