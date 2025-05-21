@@ -1,4 +1,4 @@
-#rer8
+# rer8
 import pytest
 
 from app.main import get_coin_combination
