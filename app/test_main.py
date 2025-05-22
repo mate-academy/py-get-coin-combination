@@ -1,4 +1,19 @@
 from app.main import get_coin_combination
+import pytest
 
 
-# write your tests here
+@pytest.mark.parametrize("cents, excepted", [
+    (1, [1, 0, 0, 0]),
+    (6, [1, 1, 0, 0]),
+    (17, [2, 1, 1, 0]),
+    (50, [0, 0, 0, 2]),
+    (0, [0, 0, 0, 0])
+])
+def test_coin_combination(cents: int, excepted: list) -> None:
+    assert get_coin_combination(cents) == excepted
+
+
+def test_should_raise_valueerror() -> None:
+    cents = -9
+    with pytest.raises(ValueError):
+        assert get_coin_combination(cents)
