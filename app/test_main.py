@@ -11,4 +11,3 @@ import pytest
 ])
 def test_coin_combination(cents: int, excepted: list) -> None:
     assert get_coin_combination(cents) == excepted
-
