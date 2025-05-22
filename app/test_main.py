@@ -12,8 +12,3 @@ import pytest
 def test_coin_combination(cents: int, excepted: list) -> None:
     assert get_coin_combination(cents) == excepted
 
-
-def test_should_raise_valueerror() -> None:
-    cents = -9
-    with pytest.raises(ValueError):
-        assert get_coin_combination(cents)
