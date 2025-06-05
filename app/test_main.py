@@ -15,6 +15,8 @@ class TestGetCoinCombination:
             pytest.param(50, [0, 0, 0, 2], id="50 cents")
         ]
     )
-    def test_get_combination_correctly(self, cents: int, result_lst: list):
-        assert(get_coin_combination(cents) == result_lst)
-        
+    def test_get_combination_correctly(self,
+                                       cents: int,
+                                       result_lst: list
+                                       ) -> None:
+        assert (get_coin_combination(cents) == result_lst)
