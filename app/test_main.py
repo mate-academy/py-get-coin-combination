@@ -12,6 +12,7 @@ class TestGetCoinCombination:
         (50, [0, 0, 0, 2]),
         (74, [4, 0, 2, 2]),
         (133, [3, 1, 0, 5]),
+        (666, [1, 1, 1, 26]),
     ])
     def test_get_coin_combination(
             self,
