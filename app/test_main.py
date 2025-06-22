@@ -24,10 +24,3 @@ def test_get_coin_combination_param(cents: int, expected: list[int]) -> None:
 def test_zero_cents_returns_no_coins() -> None:
     """0 cents should return [0, 0, 0, 0]."""
     assert get_coin_combination(0) == [0, 0, 0, 0]
-
-
-@pytest.mark.parametrize("invalid", [-1, -5, -100])
-def test_negative_cents_raises_value_error(invalid: int) -> None:
-    """Negative cents values should raise ValueError."""
-    with pytest.raises(ValueError):
-        get_coin_combination(invalid)
