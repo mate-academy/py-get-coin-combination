@@ -17,5 +17,5 @@ def test_should_return_only_quarters() -> None:
     assert get_coin_combination(50) == [0, 0, 0, 2]
 
 
-def test_should_return_zero_for_zero_cents() -> None :
+def test_should_return_zero_for_zero_cents():
     assert get_coin_combination(0) == [0, 0, 0, 0]
