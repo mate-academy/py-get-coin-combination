@@ -22,6 +22,7 @@ test_cases = [
     (100, [0, 0, 0, 4]),
 ]
 
+
 @pytest.mark.parametrize("cents, expected", test_cases)
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
