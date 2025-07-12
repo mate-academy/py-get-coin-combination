@@ -1,8 +1,7 @@
-import pytest
 from app.main import get_coin_combination
 
 
-def test_get_coin_combination_basic_cases():
+def test_get_coin_combination_basic_cases() -> None:
     """Test basic cases from examples."""
     assert get_coin_combination(1) == [1, 0, 0, 0]
     assert get_coin_combination(6) == [1, 1, 0, 0]
@@ -10,12 +9,12 @@ def test_get_coin_combination_basic_cases():
     assert get_coin_combination(50) == [0, 0, 0, 2]
 
 
-def test_get_coin_combination_zero():
+def test_get_coin_combination_zero() -> None:
     """Test with zero cents."""
     assert get_coin_combination(0) == [0, 0, 0, 0]
 
 
-def test_get_coin_combination_edge_cases():
+def test_get_coin_combination_edge_cases() -> None:
     """Test edge cases with different denominations."""
     # Only pennies
     assert get_coin_combination(4) == [4, 0, 0, 0]
@@ -30,7 +29,7 @@ def test_get_coin_combination_edge_cases():
     assert get_coin_combination(25) == [0, 0, 0, 1]
 
 
-def test_get_coin_combination_mixed():
+def test_get_coin_combination_mixed() -> None:
     """Test mixed combinations."""
     # 99 cents = 3 quarters + 2 dimes + 4 pennies
     assert get_coin_combination(99) == [4, 0, 2, 3]
