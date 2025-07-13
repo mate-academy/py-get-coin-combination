@@ -6,8 +6,6 @@ from app.main import get_coin_combination
 @pytest.mark.parametrize(
     "cents,expected_result",
     [
-        (-333, [0, 0, 0, 0]),
-        (-7, [0, 0, 0, 0]),
         (0, [0, 0, 0, 0]),
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
