@@ -1,7 +1,7 @@
 from app.main import get_coin_combination
 
 
-def test_list():
+def test_list() -> None:
     result = get_coin_combination(2)
     assert isinstance(result, list)
 
