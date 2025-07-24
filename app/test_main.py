@@ -32,4 +32,3 @@ def test_complex_amount() -> None:
 def test_one_each() -> None:
     # 25 + 10 + 5 + 1 = 41
     assert get_coin_combination(41) == [1, 1, 1, 1]
-
