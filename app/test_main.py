@@ -1,17 +1,25 @@
 from app.main import get_coin_combination
 
 
-from app.main import get_coin_combination
-import pytest
+def test_zero_cents() -> None:
+    assert get_coin_combination(0) == [0, 0, 0, 0]
 
-@pytest.mark.parametrize(
-    "coins,result",
-    [
-        (1, [1, 0, 0, 0]),
-        (0, [0, 0, 0, 0]),
-        (74, [4, 0, 2, 2]),
-        (900980, [0, 1, 0, 36039])
-    ]
-)
-def test_get_coin_combination(coins: int, result: list) -> None:
-    assert get_coin_combination(coins) == result
+
+def test_one_penny() -> None:
+    assert get_coin_combination(1) == [1, 0, 0, 0]
+
+
+def test_one_penny_and_one_nickel() -> None:
+    assert get_coin_combination(6) == [1, 1, 0, 0]
+
+
+def test_two_pennies_and_one_nickel_and_one_dime() -> None:
+    assert get_coin_combination(17) == [2, 1, 1, 0]
+
+
+def test_two_quarters() -> None:
+    assert get_coin_combination(50) == [0, 0, 0, 2]
+
+
+def test_99_cents() -> None:
+    assert get_coin_combination(99) == [4, 0, 2, 3]
