@@ -1,5 +1,6 @@
 from app.main import get_coin_combination
 import pytest
+from typing import List
 
 
 @pytest.mark.parametrize(
@@ -17,11 +18,11 @@ import pytest
         (100, [0, 0, 0, 4])           # exactly 4 quarters
     ]
 )
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(cents: int, expected: List[int]) -> None:
     assert get_coin_combination(cents) == expected
 
 
-def test_cannot_return_only_pennies():
+def test_cannot_return_only_pennies() -> None:
     """Test that ensures function doesn't just return all pennies"""
     # These tests will fail if the function only returns pennies
     # Must use nickel, not 5 pennies
@@ -32,7 +33,7 @@ def test_cannot_return_only_pennies():
     assert get_coin_combination(25) == [0, 0, 0, 1]
 
 
-def test_must_use_mixed_coins():
+def test_must_use_mixed_coins() -> None:
     """Test that ensures function uses multiple coin types when needed"""
     # These tests will fail if function only uses one coin type per result
     result = get_coin_combination(17)  # Should be [2, 1, 1, 0]
