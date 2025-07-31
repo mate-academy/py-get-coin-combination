@@ -2,7 +2,7 @@ from app.main import get_coin_combination
 
 
 class TestGetCoinCombination:
-    def test_get_coin_combination(self):
+    def test_get_coin_combination(self) -> None:
         assert get_coin_combination(0) == [0, 0, 0, 0]
         assert get_coin_combination(1) == [1, 0, 0, 0]
         assert get_coin_combination(5) == [0, 1, 0, 0]
