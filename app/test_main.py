@@ -11,5 +11,5 @@ import pytest
         (50, [0, 0, 0, 2])
     ]
 )
-def test_should_return_right_values(cents, result):
+def test_should_return_right_values(cents: int, result: list[int]) -> None:
     assert get_coin_combination(cents) == result
