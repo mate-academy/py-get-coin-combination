@@ -1,5 +1,7 @@
 from app.main import get_coin_combination
 import pytest
+from typing import Any
+
 
 @pytest.mark.parametrize(
     "cents,expected",
@@ -13,7 +15,7 @@ import pytest
         (71, [1, 0, 2, 2])
     ]
 )
-def test_coin_combination(cents, expected):
+def test_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
 
 
@@ -26,6 +28,9 @@ def test_coin_combination(cents, expected):
         ({1, 3}, TypeError),
     ]
 )
-def test_exceptions_if_cents_not_integers(cents, exception):
+def test_exceptions_if_cents_not_integers(
+        cents: Any,
+        exception: Exception
+) -> None:
     with pytest.raises(exception):
         get_coin_combination(cents)
