@@ -1,12 +1,6 @@
 from typing import List
 
-
 def get_coin_combination(cents: int) -> List[int]:
-    """
-    Calculate minimum coins for the given cents.
-
-    Returns list with quarters, dimes, nickels, pennies.
-    """
     quarters = cents // 25
     cents %= 25
 
@@ -18,4 +12,4 @@ def get_coin_combination(cents: int) -> List[int]:
 
     pennies = cents
 
-    return [quarters, dimes, nickels, pennies]
+    return [pennies, nickels, dimes, quarters]
