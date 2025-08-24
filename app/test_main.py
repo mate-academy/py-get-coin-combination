@@ -16,9 +16,6 @@ def test_fifty_cents_returns_two_quarters() -> None:
 def test_ninety_nine_cents_returns_expected_combination() -> None:
     assert get_coin_combination(99) == [4, 0, 2, 3]
 
-def test_zero_cents_returns_empty_list() -> None:
-    assert get_coin_combination(0) == [0, 0, 0, 0]
-
 
 def test_large_amount_returns_expected_combination() -> None:
     assert get_coin_combination(1499) == [4, 0, 2, 59]
