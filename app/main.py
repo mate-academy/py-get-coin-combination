@@ -13,4 +13,5 @@ def get_coin_combination(cents: int) -> List[int]:
 
     pennies = cents
 
-    return [pennies, nickels, dimes, quarters]
+    # Возвращаем в порядке: [quarters, dimes, nickels, pennies]
+    return [quarters, dimes, nickels, pennies]
