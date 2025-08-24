@@ -3,8 +3,8 @@ from typing import List
 
 def get_coin_combination(cents: int) -> List[int]:
     """
-    Calculate the minimum number of coins needed to make the given amount in cents.
-    Returns a list of counts of quarters, dimes, nickels, and pennies.
+    Calculate minimum coins for the given cents.
+    Returns list with quarters, dimes, nickels, pennies.
     """
     quarters = cents // 25
     cents %= 25
