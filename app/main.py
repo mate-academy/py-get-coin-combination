@@ -1,6 +1,5 @@
 from typing import List
 
-
 def get_coin_combination(cents: int) -> List[int]:
     quarters = cents // 25
     cents %= 25
@@ -13,5 +12,4 @@ def get_coin_combination(cents: int) -> List[int]:
 
     pennies = cents
 
-    # Возвращаем в порядке: [quarters, dimes, nickels, pennies]
     return [quarters, dimes, nickels, pennies]
