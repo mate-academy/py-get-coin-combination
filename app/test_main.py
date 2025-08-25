@@ -24,5 +24,5 @@ from app.main import get_coin_combination
         "Value for 1 penny and 1 quarter(coins 26)"
     ]
 )
-def test_get_coin_combination(coins, result):
+def test_get_coin_combination(coins: int, result: list) -> None:
     assert get_coin_combination(coins) == result
