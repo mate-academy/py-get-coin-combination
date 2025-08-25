@@ -17,8 +17,11 @@ def test_should_input_only_positive_value() -> None:
 def test_should_return_list_with_integers() -> None:
     cents = 34
     result = get_coin_combination(cents=cents)
-    assert (isinstance(result, list) and isinstance(result[0], int) and isinstance(result[1], int)
-            and isinstance(result[2], int) and isinstance(result[3], int))
+    assert (isinstance(result, list)
+            and isinstance(result[0], int)
+            and isinstance(result[1], int)
+            and isinstance(result[2], int)
+            and isinstance(result[3], int))
 
 
 @pytest.mark.parametrize(
