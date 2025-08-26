@@ -10,10 +10,9 @@ class TestGetCoinCombination:
         (1, [1, 0, 0, 0]),
         (5, [0, 1, 0, 0]),
         (10, [0, 0, 1, 0]),
-        (25, [0, 0, 0,1]),
+        (25, [0, 0, 0, 1]),
         (75, [0, 0, 0, 3])
     ])
-
     def test_get_coin_combination(self,
                                   cents: int,
                                   excepted_list: list
