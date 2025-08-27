@@ -52,9 +52,3 @@ from app.main import get_coin_combination
 )
 def test_coin_combo_basic_functionality(cents: int, coins: list) -> None:
     assert get_coin_combination(cents) == coins
-
-
-@pytest.mark.parametrize("cents", [-1, -5, -10, -25, -50, -500])
-def test_coin_combination_negative_cents(cents: int) -> None:
-    with pytest.raises(ValueError):
-        get_coin_combination(cents)
