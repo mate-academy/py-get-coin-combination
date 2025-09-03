@@ -45,7 +45,11 @@ def test_get_coin_combination_examples(value: int, result: list[int]) -> None:
         (59, [4, 1, 0, 2], [0, 0, 1, 2]),
     ]
 )
-def test_boundaries_change(value: int, before: list[int], after: list[int]) -> None:
+def test_boundaries_change(
+    value: int,
+    before: list[int],
+    after: list[int],
+) -> None:
     assert get_coin_combination(value) == before
     assert get_coin_combination(value + 1) == after
 
