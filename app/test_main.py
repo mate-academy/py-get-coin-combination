@@ -1,5 +1,4 @@
 from app.main import get_coin_combination
-import math
 import pytest
 
 
@@ -46,7 +45,7 @@ def test_get_coin_combination_examples(value: int, result: list[int]) -> None:
         (59, [4, 1, 0, 2], [0, 0, 1, 2]),
     ]
 )
-def test_boundaries_change(value, before, after):
+def test_boundaries_change(value: int, before: list[int], after: list[int]) -> None:
     assert get_coin_combination(value) == before
     assert get_coin_combination(value + 1) == after
 
@@ -64,8 +63,12 @@ def test_boundaries_change(value, before, after):
 
 
 @pytest.mark.parametrize("value", [(10**6), (10**9)])
-def test_very_large_values(value):
+def test_very_large_values(value: int) -> None:
     out = get_coin_combination(value)
-    assert isinstance(out, list) and len(out) == 4 and all(isinstance(x, int) for x in out)
+    assert (
+        isinstance(out, list)
+        and len(out) == 4
+        and all(isinstance(x, int) for x in out)
+    )
     out_prev = get_coin_combination(value - 1)
     assert out[0] < out_prev[0]
