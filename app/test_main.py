@@ -2,9 +2,7 @@ from app.main import get_coin_combination
 import pytest
 
 
-@pytest.mark.parametrize(
-    "coins",
-    "result",
+@pytest.mark.parametrize("coins,  result",
     [
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
@@ -13,13 +11,11 @@ import pytest
     ],
     ids=[
         "test for  cent",
-        "test for nickels "
+        "test for nickels",
         "test for dime"
         "test for quarters",
     ]
 )
-def test_get_coin_combination(coins: int, result: int) -> None:
+def test_get_coin_combination(coins: int, result: list) -> None:
     assert get_coin_combination(coins) == result
 
-
-# write your tests here
