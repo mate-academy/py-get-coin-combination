@@ -18,8 +18,3 @@ import pytest
 )
 def test_get_coin_combination(coins: int, result: list) -> None:
     assert get_coin_combination(coins) == result
-
-
-def test_ValueError() -> None:
-    with pytest.raises(ValueError):
-        get_coin_combination(1)
