@@ -12,7 +12,7 @@ import pytest
     ids=[
         "test for cent",
         "test for nickels",
-        "test for dime"
+        "test for dime",
         "test for quarters",
     ]
 )
