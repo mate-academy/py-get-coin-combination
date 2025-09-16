@@ -2,7 +2,8 @@ from app.main import get_coin_combination
 import pytest
 
 
-@pytest.mark.parametrize("coins,result",
+@pytest.mark.parametrize(
+    "coins,result",
     [
         (1, [1, 0, 0, 0]),
         (6, [1, 1, 0, 0]),
