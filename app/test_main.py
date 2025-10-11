@@ -13,7 +13,8 @@ class TestGetCoinCombination:
             (50, [0, 0, 0, 2]),
         ]
     )
-    def test_get_coin_combination_return_correct_values(self,
-                                                        cents: int,
-                                                        expected: list[int]) -> None:
+    def test_get_coin_combination_return_correct_values(
+            self,
+            cents: int,
+            expected: list[int]) -> None:
         assert get_coin_combination(cents) == expected
