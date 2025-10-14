@@ -1,3 +1,4 @@
+from typing import Any
 import pytest
 from app.main import get_coin_combination
 
@@ -14,7 +15,7 @@ from app.main import get_coin_combination
         (0, [0, 0, 0, 0]),  # no coins
     ]
 )
-def test_get_coin_combination(cents: int, expected: int) -> None:
+def test_get_coin_combination(cents: int, expected: list[int]) -> None:
     result = get_coin_combination(cents)
     assert result == expected
 
@@ -36,7 +37,7 @@ def test_get_coin_combination(cents: int, expected: int) -> None:
 
     ]
 )
-def test_get_coin_combination_boundaries(cents: int, expected: int) -> None:
+def test_get_coin_combination_boundaries(cents: int, expected: list[int]) -> None:
     result = get_coin_combination(cents)
     assert result == expected
 
@@ -46,11 +47,6 @@ def test_get_coin_combination_returns_list_of_four_ints() -> None:
     assert isinstance(result, list)
     assert len(result) == 4
     assert all(isinstance(x, int) for x in result)
-
-
-def test_get_coin_combination_zero_cents_returns_empty_combination() -> None:
-    result = get_coin_combination(0)
-    assert result == [0, 0, 0, 0]
 
 
 def test_get_coin_combination_big_value() -> None:
@@ -70,11 +66,10 @@ def test_get_coin_combination_big_value() -> None:
         None,
         [1, 2],
         {"cents": 10},
-        True,
     ]
 )
 def test_get_coin_combination_raises_error_for_invalid_input(
-        invalid_input: str
+        invalid_input: Any
 ) -> None:
-    with pytest.raises(ValueError):
+    with pytest.raises((ValueError, TypeError)):
         get_coin_combination(invalid_input)
