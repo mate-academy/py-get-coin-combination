@@ -37,7 +37,10 @@ def test_get_coin_combination(cents: int, expected: list[int]) -> None:
 
     ]
 )
-def test_get_coin_combination_boundaries(cents: int, expected: list[int]) -> None:
+def test_get_coin_combination_boundaries(
+        cents: int,
+        expected: list[int]
+) -> None:
     result = get_coin_combination(cents)
     assert result == expected
 
