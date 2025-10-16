@@ -12,7 +12,7 @@ def test_only_pennies():
 
 def test_only_nickels():
     assert get_coin_combination(5) == [0, 1, 0, 0]
-    assert get_coin_combination(10) == [0, 0, 1, 0]  # Prefer 1 dime over 2 nickels
+    assert get_coin_combination(10) == [0, 0, 1, 0]  
 
 
 def test_only_dimes():
