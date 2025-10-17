@@ -18,7 +18,7 @@ from app.main import get_coin_combination
     ]
 )
 def test_should_check_that_func_return_diff_coins(
-        value,
-        result
+        value: int,
+        result: list
 ) -> None:
     assert get_coin_combination(value) == result
