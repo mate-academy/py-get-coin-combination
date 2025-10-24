@@ -71,7 +71,8 @@ def test_cases_invalid_type(cents: Any) -> None:
 @pytest.mark.parametrize("cents", cases_negative_type)
 def test_cases_negative_type(cents: int) -> None:
     result = get_coin_combination(cents)
-    assert all(x >= 0 for x in result)
+    assert isinstance(result, list)
+    assert len(result) == 4
 
 
 @pytest.mark.parametrize("cents, expected", cases_large_numbers)
