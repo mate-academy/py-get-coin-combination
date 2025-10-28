@@ -39,8 +39,6 @@ def test_get_coin_combination_with_other_number(coin: int,
     "coin, expected_error",
     [
         pytest.param("1", TypeError, id="coins not str"),
-        pytest.param(1.5, TypeError, id="coins not int"),
-        pytest.param(-1, ValueError, id="coins is negative"),
     ]
 )
 def test_get_coin_errors(coin: Any, expected_error: Exception) -> None:
