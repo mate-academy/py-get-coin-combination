@@ -1,4 +1,4 @@
-import pytest # type: ignore
+import pytest   # type: ignore #  two spaces before inline comment
 
 from app.main import get_coin_combination
 
@@ -40,15 +40,17 @@ def test_large_amount() -> None:
 def test_invalid_input_type() -> None:
     """Test that non-integer inputs raise TypeError if implemented."""
     try:
-        get_coin_combination("10")  # type: ignore[arg-type]
-        # If no exception raised, just assert result is list
-        # (compatible with current implementation)
-        assert isinstance(get_coin_combination("10"), list)
+        get_coin_combination("10")   # type: ignore[arg-type]
+        result = get_coin_combination("10")  # type: ignore[arg-type]
+        assert isinstance(result, list)
     except TypeError:
-        pytest.xfail("Type checking not implemented in this version")
+        pytest.xfail(
+            "Type checking not implemented "
+            "in this version of the function"
+        )
 
 
 def test_negative_input_behavior() -> None:
-    """Test negative input returns list instead of raising (current behavior)."""
+    """Test negative input returns list instead of raising."""
     result = get_coin_combination(-5)
     assert isinstance(result, list)
