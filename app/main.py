@@ -1,19 +1,25 @@
-def get_coin_combination(cents: int) -> list[int]:
+"""Module for calculating coin combinations."""
 
+from typing import List
+
+
+def get_coin_combination(cents: int) -> List[int]:
+    """
+    Return the smallest possible number of US coins for the given cents.
+
+    coins[0] = number of pennies (1¢)
+    coins[1] = number of nickels (5¢)
+    coins[2] = number of dimes (10¢)
+    coins[3] = number of quarters (25¢)
+    """
     if cents < 0:
-        raise ValueError("Amount of cents must be non-negative")
+        raise ValueError("Cents value must be non-negative.")
 
-    values = [25, 10, 5, 1]
-    counts = []
+    values = [1, 5, 10, 25]
+    coins = [0, 0, 0, 0]
 
-    for value in values:
-        count = cents // value
-        counts.append(count)
-        cents -= count * value
+    for i in range(3, -1, -1):
+        coins[i] = cents // values[i]
+        cents -= coins[i] * values[i]
 
-    pennies = counts[3]
-    nickels = counts[2]
-    dimes = counts[1]
-    quarters = counts[0]
-
-    return [pennies, nickels, dimes, quarters]
+    return coins
