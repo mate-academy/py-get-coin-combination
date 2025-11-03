@@ -1,9 +1,19 @@
-def get_coin_combination(cents: int) -> list:
-    values = [1, 5, 10, 25]
-    coins = [0, 0, 0, 0]
+def get_coin_combination(cents: int) -> list[int]:
 
-    for i in range(3, -1, -1):
-        coins[i] = cents // values[i]
-        cents -= coins[i] * values[i]
+    if cents < 0:
+        raise ValueError("Amount of cents must be non-negative")
 
-    return coins
+    values = [25, 10, 5, 1]
+    counts = []
+
+    for value in values:
+        count = cents // value
+        counts.append(count)
+        cents -= count * value
+
+    pennies = counts[3]
+    nickels = counts[2]
+    dimes = counts[1]
+    quarters = counts[0]
+
+    return [pennies, nickels, dimes, quarters]
