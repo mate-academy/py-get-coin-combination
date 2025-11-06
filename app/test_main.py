@@ -24,6 +24,7 @@ def test_gtc_should_take_integer() -> None:
     with pytest.raises(TypeError):
         get_coin_combination("1")
 
+
 def test_gtc_should_take_positive_int() -> None:
     with pytest.raises(ValueError):
         get_coin_combination(-8)
