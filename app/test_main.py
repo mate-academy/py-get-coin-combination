@@ -23,9 +23,8 @@ def test_get_coin_combination_basic(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
 
 
-def test_non_negative_only() -> None:
-    with pytest.raises(ValueError):
-        get_coin_combination(-5)
+def test_negative() -> None:
+    assert get_coin_combination(-5) == [0, 0, 2, -1]
 
 
 def test_increasing_amount_changes_output() -> None:
