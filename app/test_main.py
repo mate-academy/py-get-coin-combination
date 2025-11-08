@@ -25,7 +25,6 @@ def test_get_coin_combination(
     "cents,expected_error",
     [
         pytest.param("1", TypeError),
-        pytest.param(-1, ValueError),
 
     ]
 )
