@@ -25,6 +25,9 @@ class TestGetCoinCombination:
             "all possible coins"
         ]
     )
-
-    def test_get_coin_combination(self, cents: int, expected: List[int]) -> None:
+    def test_get_coin_combination(
+            self,
+            cents: int,
+            expected: List[int]
+    ) -> None:
         assert get_coin_combination(cents) == expected
