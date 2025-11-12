@@ -17,6 +17,7 @@ from app.main import get_coin_combination
 def test_get_coin_combination(input_cents: int,
                               expected_output: list,
                               exception: type) -> None:
+
     if exception:
         with pytest.raises(exception):
             get_coin_combination(input_cents)
