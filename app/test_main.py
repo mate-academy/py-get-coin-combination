@@ -17,23 +17,25 @@ def test_get_coin_combination(cents: int, expected: list) -> None:
 
 
 @pytest.mark.parametrize(
-    "cents",
+    "cents, expected",
     [
-        (-0),
-        (-6),
-        (-17),
-        (-50),
+        (-0, [0, 0, 0, 0]),   # -0 is 0
+        (-6, [4, 1, 1, -1]),
+        (-17, [3, 1, 0, -1]),
+        (-50, [0, 0, 0, -2]),
     ],
 )
-def test_negative_values_for_ger_coin_combination(cents: Any) -> None:
-    assert get_coin_combination(cents) == [0, 0, 0, 0]
+def test_negative_values_for_get_coin_combination(cents: int,
+                                                  expected: list[int]
+                                                  ) -> None:
+    assert get_coin_combination(cents) == expected
 
 
 @pytest.mark.parametrize(
     "cents",
     [
-        (None),
-        ("10"),
+        None,
+        "10",
     ],
 )
 def test_for_other_types_of_values(cents: Any) -> None:
