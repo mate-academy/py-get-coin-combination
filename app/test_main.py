@@ -1,4 +1,38 @@
+import pytest
+from typing import Any
 from app.main import get_coin_combination
 
+@pytest.mark.parametrize(
+    "cents,expected",
+    [
+        (1, [1, 0, 0, 0]),
+        (6, [1, 1, 0, 0]),
+        (17, [2, 1, 1, 0]),
+        (50, [0, 0, 0, 2]),
+    ],
+)
+def test_get_coin_combination(cents: int, expected) -> None:
+    assert get_coin_combination(cents) == expected
 
-# write your tests here
+@pytest.mark.parametrize(
+    "cents",
+    [
+        (-0),
+        (-6),
+        (-17),
+        (-50),
+    ],
+)
+def test_negative_values_for_ger_coin_combination(cents) -> None:
+    assert get_coin_combination(cents) == [0, 0, 0, 0]
+
+@pytest.mark.parametrize(
+    "cents",
+    [
+        (None),
+        (''),
+    ],
+)
+def test_for_other_types_of_values(cents: Any) -> None:
+    with pytest.raises(TypeError):
+        get_coin_combination(cents)
