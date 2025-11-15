@@ -2,6 +2,7 @@ import pytest
 from typing import Any
 from app.main import get_coin_combination
 
+
 @pytest.mark.parametrize(
     "cents,expected",
     [
@@ -11,8 +12,9 @@ from app.main import get_coin_combination
         (50, [0, 0, 0, 2]),
     ],
 )
-def test_get_coin_combination(cents: int, expected) -> None:
+def test_get_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
+
 
 @pytest.mark.parametrize(
     "cents",
@@ -23,14 +25,15 @@ def test_get_coin_combination(cents: int, expected) -> None:
         (-50),
     ],
 )
-def test_negative_values_for_ger_coin_combination(cents) -> None:
+def test_negative_values_for_ger_coin_combination(cents: Any) -> None:
     assert get_coin_combination(cents) == [0, 0, 0, 0]
+
 
 @pytest.mark.parametrize(
     "cents",
     [
         (None),
-        (''),
+        ("10"),
     ],
 )
 def test_for_other_types_of_values(cents: Any) -> None:
