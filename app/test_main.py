@@ -20,5 +20,3 @@ class TestMain:
     def test_should_raise_value_error(self) -> None:
         with pytest.raises(ValueError):
             get_coin_combination(-1)
-
-
