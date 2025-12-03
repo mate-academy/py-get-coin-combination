@@ -16,19 +16,19 @@ class Test:
     def test_cents_is_non_negative(self, cents: int, exp: list) -> None:
         assert cents >= 0
 
-    def test_coins_lenght(self, cents: int, exp: list):
+    def test_coins_lenght(self, cents: int, exp: list) -> None:
         assert len(get_coin_combination(cents)) == 4
 
 
 class TestEdgeCase:
-    def test_cents_is_negative(self):
+    def test_cents_is_negative(self) -> None:
         with pytest.raises(ValueError):
             get_coin_combination(-10)
 
-    def test_cents_is_string_raises_exception(self):
+    def test_cents_is_string_raises_exception(self) -> None:
         with pytest.raises(TypeError):
             get_coin_combination("a")
-    
-    def test_cents_is_none_raises_exception(self):
+
+    def test_cents_is_none_raises_exception(self) -> None:
         with pytest.raises(TypeError):
             get_coin_combination(None)
