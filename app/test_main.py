@@ -1,3 +1,5 @@
+from typing import List
+
 import pytest
 from app.main import get_coin_combination
 
@@ -56,10 +58,11 @@ class TestParameterizedCasesGetCoinCombination:
         "four_quarters",
         "complex_119_cents",
     ])
-    def test_various_amounts(self, cents, expected):
+    def test_various_amounts(self, cents: int, expected: List[int]) -> None:
         """Test various amounts with parameterized inputs."""
         result = get_coin_combination(cents)
-        assert result == expected, f"Failed for {cents} cents. Expected {expected}, got {result}"
+        assert result == expected, (f"Failed for {cents} cents. "
+                                    f"Expected {expected}, got {result}")
 
 
 class TestRaiseErrorsGetCoinCombination:
