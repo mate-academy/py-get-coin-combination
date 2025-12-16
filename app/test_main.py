@@ -2,6 +2,7 @@ from app.main import get_coin_combination
 
 import pytest
 
+
 @pytest.mark.parametrize(
     "cents, expected",
     [
