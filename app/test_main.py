@@ -2,6 +2,7 @@ import pytest
 
 from app.main import get_coin_combination
 
+
 @pytest.mark.parametrize(
     "cents,coins",
     [
@@ -12,7 +13,10 @@ from app.main import get_coin_combination
         pytest.param(0, [0, 0, 0, 0], id="zero cents")
     ]
 )
-def test_different_amounts_and_coin_combinations(cents, coins) -> None:
+def test_different_amounts_and_coin_combinations(
+        cents: int,
+        coins: list[int]
+) -> None:
     assert get_coin_combination(cents) == coins
 
 
@@ -23,4 +27,3 @@ def test_sum_of_coins_equals_cents() -> None:
     for i in range(len(values)):
         sum_of_coins += result[i] * values[i]
     assert sum_of_coins == 117
-
