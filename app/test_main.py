@@ -1,5 +1,7 @@
-from app.main import get_coin_combination
+from typing import List
+
 import pytest
+from app.main import get_coin_combination
 
 
 @pytest.mark.parametrize(
@@ -13,5 +15,5 @@ import pytest
         (99, [4, 0, 2, 3]),
     ],
 )
-def test_get_coin_combination(amount: int, expected: list[int]) -> None:
+def test_get_coin_combination(amount: int, expected: List[int]) -> None:
     assert get_coin_combination(amount) == expected
