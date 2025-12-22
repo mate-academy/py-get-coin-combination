@@ -16,3 +16,7 @@ from app.main import get_coin_combination
 )
 def test_get_coin_combination(amount: int, expected: list) -> None:
     assert get_coin_combination(amount) == expected
+
+def test_negative_amount_raises_value_error() -> None:
+    with pytest.raises(ValueError):
+        get_coin_combination(-1)
