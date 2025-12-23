@@ -14,4 +14,5 @@ def test_get_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
 
 def test_should_return_different_coins():
-    assert get_coin_combination()
+    result = get_coin_combination(6)
+    if result[0] > 5 or result[1] > 5:
