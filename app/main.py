@@ -1,9 +1,10 @@
 def get_coin_combination(cents: int) -> list:
-    values = [1, 5, 10, 25]
+    values = [25, 10, 5, 1]
     coins = [0, 0, 0, 0]
 
-    for i in range(3, -1, -1):
-        coins[i] = cents // values[i]
-        cents -= coins[i] * values[i]
+    for i, value in enumerate(values):
+        if cents >= value:
+            coins[i] = cents // value
+            cents %= value
 
     return coins
