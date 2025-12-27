@@ -21,7 +21,8 @@ def get_coin_combination(cents):
     (75, [0, 0, 0, 3]),
     (99, [4, 0, 2, 3]),
     (100, [0, 0, 0, 4]),
-    (123, [3, 0, 2, 4])
+    (123, [3, 0, 2, 4]),
+    (249, [4, 0, 2, 9])
 ])
 def test_get_coin_combination(cents, expected):
     result = get_coin_combination(cents)
