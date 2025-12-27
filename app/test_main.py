@@ -1,11 +1,12 @@
-import pytest
-
-
 def get_coin_combination(cents: int) -> list[int]:
     quarters, remainder = divmod(cents, 25)
     dimes, remainder = divmod(remainder, 10)
     nickels, pennies = divmod(remainder, 5)
     return [pennies, nickels, dimes, quarters]
+
+
+import pytest
+from app.main import get_coin_combination
 
 
 @pytest.mark.parametrize("cents, expected", [
