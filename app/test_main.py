@@ -1,10 +1,12 @@
 import pytest
 
-def get_coin_combination(cents):
+
+def get_coin_combination(cents: int) -> list[int]:
     quarters, remainder = divmod(cents, 25)
     dimes, remainder = divmod(remainder, 10)
     nickels, pennies = divmod(remainder, 5)
     return [pennies, nickels, dimes, quarters]
+
 
 @pytest.mark.parametrize("cents, expected", [
     (0, [0, 0, 0, 0]),
@@ -24,7 +26,13 @@ def get_coin_combination(cents):
     (123, [3, 0, 2, 4]),
     (249, [4, 0, 2, 9])
 ])
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(cents: int, expected: list[int]) -> None:
     result = get_coin_combination(cents)
     assert result == expected
-    assert (result[0] * 1 + result[1] * 5 + result[2] * 10 + result[3] * 25) == cents
+    total = (
+        result[0] * 1
+        + result[1] * 5
+        + result[2] * 10
+        + result[3] * 25
+    )
+    assert total == cents
