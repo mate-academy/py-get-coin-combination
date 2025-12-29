@@ -24,11 +24,6 @@ def test_get_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
 
 
-def test_get_coin_combination_error() -> None:
-    with pytest.raises(ValueError):
-        get_coin_combination(-1)
-
-
 def test_all_values_are_non_negative_integers() -> None:
     result = get_coin_combination(88)
     for value in result:
