@@ -28,13 +28,15 @@ def test_get_coin_combination_error() -> None:
     with pytest.raises(ValueError):
         get_coin_combination(-1)
 
+
 def test_all_values_are_non_negative_integers() -> None:
     result = get_coin_combination(88)
     for value in result:
         assert isinstance(value, int)
         assert value >= 0
 
-def test_return_type_and_length():
+
+def test_return_type_and_length() -> None:
     result = get_coin_combination(37)
     assert isinstance(result, list)
     assert len(result) == 4
