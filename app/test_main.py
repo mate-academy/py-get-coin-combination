@@ -1,6 +1,7 @@
-from app.main import get_coin_combination
-
 import pytest
+from typing import Any
+
+from app.main import get_coin_combination
 
 
 @pytest.mark.parametrize(
@@ -13,7 +14,7 @@ import pytest
         (50, [0, 0, 0, 2])
     ]
 )
-def test_get_coin_combination(amount, expected) -> None:
+def test_get_coin_combination(amount: int, expected: list[int]) -> None:
     assert get_coin_combination(amount) == expected
 
 
@@ -40,6 +41,6 @@ def test_get_coin_combination_negative_amount(amount: int) -> None:
         [25, 10]
     ]
 )
-def test_get_coin_combination_invalid_type(amount) -> None:
+def test_get_coin_combination_invalid_type(amount: Any) -> None:
     with pytest.raises(TypeError):
         get_coin_combination(amount)
