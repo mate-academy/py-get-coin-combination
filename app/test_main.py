@@ -3,6 +3,7 @@ from typing import Any
 from app.main import get_coin_combination
 import pytest
 
+
 @pytest.mark.parametrize(
     "cents,expected_result",
     [
@@ -16,6 +17,7 @@ import pytest
 )
 def test_works_correctly(cents: int, expected_result: list[int]) -> None:
     assert get_coin_combination(cents) == expected_result
+
 
 @pytest.mark.parametrize(
     "cents,expected_error",
