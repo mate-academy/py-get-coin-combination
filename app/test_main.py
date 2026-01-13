@@ -1,5 +1,5 @@
 import pytest
-from app.coin_combination import get_coin_combination
+from app.main import get_coin_combination
 
 
 @pytest.mark.parametrize(
