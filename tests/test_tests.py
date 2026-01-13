@@ -1,6 +1,9 @@
 import pytest
 
 from app import main
+from pathlib import Path
+
+TEST_MAIN = Path(__file__).parent.parent / "app" / "test_main.py"
 
 
 def test_return_only_pennies(monkeypatch):
@@ -9,7 +12,8 @@ def test_return_only_pennies(monkeypatch):
 
     monkeypatch.setattr(main, "get_coin_combination", return_only_pennies)
 
-    test_result = pytest.main(["app/test_main.py"])
+    test_result = pytest.main([str(TEST_MAIN)])
+
     assert (
         test_result.value == 1
     ), "Tests should check that 'get_coin_combination' could return different coins, not only pennies"
@@ -25,7 +29,8 @@ def test_return_only_one_type(monkeypatch):
             return [0, 0, cents // 10, 0]
         return [0, 0, 0, cents // 25]
     monkeypatch.setattr(main, "get_coin_combination", return_only_one_type)
-    test_result = pytest.main(["app/test_main.py"])
+    test_result = pytest.main([str(TEST_MAIN)])
+
     assert (
         test_result.value == 1
     ), "Tests should check that 'get_coin_combination' could return coins of the different types"
