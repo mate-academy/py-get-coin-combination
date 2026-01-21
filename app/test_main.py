@@ -39,8 +39,8 @@ def test_get_coin_combination_negative_numbers(cents: int) -> None:
 
 @pytest.mark.parametrize(
     "cents",
-    ["10", [10], {"cents": 10}],
-    ids=["string_input", "list_input", "dict_input"]
+    ["10", [10], None],
+    ids=["string_input", "list_input", "none_input"]
 )
 def test_get_coin_combination_raises_type_error(cents: any) -> None:
     with pytest.raises(TypeError):
