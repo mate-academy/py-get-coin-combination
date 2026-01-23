@@ -6,7 +6,7 @@ from app.main import get_coin_combination
     "cents, coins",
     [
         pytest.param(
-            0, [0, 0 ,0 ,0],
+            0, [0, 0, 0, 0],
             id="Return Zero coins"
         ),
         pytest.param(
@@ -34,6 +34,6 @@ from app.main import get_coin_combination
 )
 def test_get_coin_combination(
         cents: int,
-        coins: list[int],
-)-> None:
+        coins: list[int]
+) -> None:
     assert get_coin_combination(cents) == coins
