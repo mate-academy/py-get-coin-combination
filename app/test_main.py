@@ -20,4 +20,5 @@ def test_input_value_typy() -> None:
 def test_get_coin_combination_results(value: int, expected: list) -> None:
     assert (
         get_coin_combination(value) == expected
-    ), f"With {value} expected {expected} but got {get_coin_combination(value)}"
+    ), (f"With {value} expected {expected} "
+        f"but got {get_coin_combination(value)}")
