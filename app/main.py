@@ -1,9 +1,18 @@
 def get_coin_combination(cents: int) -> list:
-    values = [1, 5, 10, 25]
-    coins = [0, 0, 0, 0]
+    if not isinstance(cents, int):
+        raise TypeError("Cents must be an integer")
 
-    for i in range(3, -1, -1):
-        coins[i] = cents // values[i]
-        cents -= coins[i] * values[i]
+    if cents <= 0:
+        return [0, 0, 0, 0]
+    quarters = cents // 25
+    remainder = cents % 25
 
-    return coins
+    dimes = remainder // 10
+    remainder = remainder % 10
+
+    nickels = remainder // 5
+    remainder = remainder % 5
+
+    pennies = remainder
+
+    return [pennies, nickels, dimes, quarters]
