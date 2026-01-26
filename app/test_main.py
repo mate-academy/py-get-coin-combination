@@ -61,7 +61,7 @@ def test_get_coin_combination_return_values(cents: int, result: list) -> None:
         (17, 4),
     ],
 )
-def test_animal_age_to_human_years(cents: int, result: int) -> None:
+def test_count_elemnts_of_returned_list(cents: int, result: int) -> None:
     assert (
         len(main.get_coin_combination(cents)) == result
     ), f"The function has to returned a {result} elements list "
