@@ -35,6 +35,7 @@ def test_should_return_correct_list(cents: int, expected: list) -> None:
 def test_should_return_list_of_4_items(cents: int) -> None:
     assert len(get_coin_combination(cents)) == 4
 
+
 def test_return_only_pennies() -> None:
     assert get_coin_combination(40)[0] == 0
     assert sum(get_coin_combination(40)[1:]) > 0
