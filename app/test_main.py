@@ -1,14 +1,24 @@
-def get_coin_combination(cents: int) -> list[int]:
-    quarters: int = cents // 25
-    cents %= 25
+from app.main import get_coin_combination
 
-    dimes: int = cents // 10
-    cents %= 10
 
-    nickels: int = cents // 5
-    cents %= 5
-
-    pennies: int = cents
-
-    return [pennies, nickels, dimes, quarters]
-  
+@pytest.mark.parametrize(
+    "cents, expected",
+    [
+        (0, [0, 0, 0, 0]),
+        (1, [1, 0, 0, 0]),
+        (4, [4, 0, 0, 0]),
+        (5, [0, 1, 0, 0]),
+        (6, [1, 1, 0, 0]),
+        (9, [4, 1, 0, 0]),
+        (10, [0, 0, 1, 0]),
+        (17, [2, 1, 1, 0]),
+        (25, [0, 0, 0, 1]),
+        (50, [0, 0, 0, 2]),
+        (99, [4, 0, 2, 3]),
+    ],
+)
+def test_get_coin_combination(
+    cents: int,
+    expected: list[int],
+) -> None:
+    assert get_coin_combination(cents) == expected
