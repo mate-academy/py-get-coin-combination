@@ -15,3 +15,13 @@ import pytest
 )
 def test_get_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
+
+
+def test_should_raise_error_with_negative_value() -> None:
+    with pytest.raises(ValueError):
+        get_coin_combination(-1)
+
+
+def test_should_raise_error_if_length_list_not_four() -> None:
+    result = get_coin_combination(3)
+    assert len(result) == 4
