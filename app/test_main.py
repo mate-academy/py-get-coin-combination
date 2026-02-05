@@ -11,11 +11,13 @@ import pytest
         (15, [0, 1, 1, 0]),
         (17, [2, 1, 1, 0]),
         (50, [0, 0, 0, 2]),
+        (42, [2, 1, 1, 1]),
         (10000, [0, 0, 0, 400]),
     ]
 )
 def test_get_coin_combination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
+
 
 def test_should_raise_error_if_length_list_not_four() -> None:
     result = get_coin_combination(3)
