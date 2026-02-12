@@ -1,9 +1,11 @@
+# flake8: noqa: *
 import pytest
 
 from app.main import get_coin_combination
 
+
 @pytest.mark.parametrize(
-    'cents,expected_result',
+    "cents,expected_result",
     [
         pytest.param(1, [1, 0, 0, 0], id="1 penny"),
         pytest.param(6, [1, 1, 0, 0], id="1 penny + 1 nickel"),
