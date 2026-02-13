@@ -47,6 +47,6 @@ from app.main import get_coin_combination
         )
     ]
 )
-def test_get_coin_combination(cents, values):
+def test_get_coin_combination(cents: int, values: list) -> None:
     assert get_coin_combination(cents) == values
     assert len(get_coin_combination(cents)) == 4
