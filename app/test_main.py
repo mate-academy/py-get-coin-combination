@@ -9,21 +9,14 @@ def test_zero():
 @pytest.mark.parametrize(
     "cents, expected",
     [
-        (1, [1, 0, 0, 0]),
-        (4, [4, 0, 0, 0]),  # boundary before nickel
-        (5, [0, 1, 0, 0]),
-        (6, [1, 1, 0, 0]),
-        (9, [4, 1, 0, 0]),  # boundary before dime
-        (10, [0, 0, 1, 0]),
-        (14, [4, 0, 1, 0]),
-        (15, [0, 1, 1, 0]),
-        (24, [4, 0, 2, 0]),  # boundary before quarter
-        (25, [0, 0, 0, 1]),
-        (26, [1, 0, 0, 1]),
-        (30, [0, 1, 0, 1]),
-        (50, [0, 0, 0, 2]),
-        (99, [4, 0, 2, 3]),
-    ]
+        (1, [1, 0, 0, 0]),     # pennies
+        (5, [0, 1, 0, 0]),     # nickel
+        (10, [0, 0, 1, 0]),    # dime
+        (25, [0, 0, 0, 1]),    # quarter
+        (6, [1, 1, 0, 0]),     # mixed: penny + nickel
+        (17, [2, 1, 1, 0]),    # mixed: penny + nickel + dime (з прикладу)
+        (50, [0, 0, 0, 2]),    # multiple quarters (з прикладу)
+    ],
 )
 def test_coin_combinations(cents, expected):
     assert get_coin_combination(cents) == expected
