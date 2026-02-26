@@ -1,29 +1,32 @@
 import pytest
-from app.main import get_coin_combination
+
+from app import main
 
 
-def test_zero() -> None:
-    assert get_coin_combination(0) == [0, 0, 0, 0]
+def test_return_only_pennies(monkeypatch):
+    def return_only_pennies(cents: int) -> list:
+        return [cents, 0, 0, 0]
+
+    monkeypatch.setattr(main, "get_coin_combination", return_only_pennies)
+
+    test_result = pytest.main(["app/test_main.py"])
+    assert (
+        test_result.value == 1
+    ), "Tests should check that 'get_coin_combination' could return different coins, not only pennies"
 
 
-@pytest.mark.parametrize(
-    "cents, expected",
-    [
-        (1, [1, 0, 0, 0]),
-        (4, [4, 0, 0, 0]),
-        (5, [0, 1, 0, 0]),
-        (6, [1, 1, 0, 0]),
-        (9, [4, 1, 0, 0]),
-        (10, [0, 0, 1, 0]),
-        (11, [1, 0, 1, 0]),
-        (24, [4, 0, 2, 0]),
-        (25, [0, 0, 0, 1]),
-        (26, [1, 0, 0, 1]),
-        (17, [2, 1, 1, 0]),
-        (30, [0, 1, 0, 1]),
-        (50, [0, 0, 0, 2]),
-        (99, [4, 0, 2, 3]),
-    ],
-)
-def test_coin_combinations(cents: int, expected: list[int]) -> None:
-    assert get_coin_combination(cents) == expected
+def test_return_only_one_type(monkeypatch):
+    def return_only_one_type(cents: int) -> list:
+        if cents < 5:
+            return [cents, 0, 0, 0]
+        if cents < 10:
+            return [0, cents // 5, 0, 0]
+        if cents < 25:
+            return [0, 0, cents // 10, 0]
+        return [0, 0, 0, cents // 25]
+    monkeypatch.setattr(main, "get_coin_combination", return_only_one_type)
+    test_result = pytest.main(["app/test_main.py"])
+    assert (
+        test_result.value == 1
+    ), "Tests should check that 'get_coin_combination' could return coins of the different types"
+
