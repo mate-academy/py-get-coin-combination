@@ -16,6 +16,11 @@ def test_zero():
         (6, [1, 1, 0, 0]),     # mixed: penny + nickel
         (17, [2, 1, 1, 0]),    # mixed: penny + nickel + dime (з прикладу)
         (50, [0, 0, 0, 2]),    # multiple quarters (з прикладу)
+        (4, [4, 0, 0, 0]),     # boundary before nickel
+        (9, [4, 1, 0, 0]),     # boundary before dime
+        (24, [4, 0, 2, 0]),    # boundary before quarter
+        (26, [1, 0, 0, 1]),    # after quarter
+        (99, [4, 0, 2, 3]),    # bigger combined case
     ],
 )
 def test_coin_combinations(cents, expected):
