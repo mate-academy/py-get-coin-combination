@@ -23,5 +23,13 @@ from app.main import get_coin_combination
         "should return proper number of coins of the same amount"
     ]
 )
-def test_should_return_proper_coin_combination(cents: int, expected_coins: list) -> None:
+def test_should_return_proper_coin_combination(
+        cents: int,
+        expected_coins: list[int]
+) -> None:
     assert get_coin_combination(cents) == expected_coins
+
+
+def test_should_raise_type_error_when_given_wrong_input() -> None:
+    with pytest.raises(TypeError):
+        get_coin_combination("3")
