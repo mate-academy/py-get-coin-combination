@@ -1,5 +1,5 @@
 import pytest
-from app import main  # from app.main import get_coin_combination
+from app import main
 
 
 class TestCountAmountOfCoins:
@@ -25,8 +25,10 @@ class TestCountAmountOfCoins:
         amount_of_cents: int,
         expected_combination: list[int]
     ) -> None:
-        assert main.get_coin_combination(amount_of_cents) == expected_combination
-
+        assert (
+            main.get_coin_combination(amount_of_cents)
+            == expected_combination
+        )
 
     @pytest.mark.parametrize(
         "amount_of_cents",
@@ -41,7 +43,6 @@ class TestCountAmountOfCoins:
     ) -> None:
         with pytest.raises(ValueError):
             main.get_coin_combination(amount_of_cents)
-
 
     @pytest.mark.parametrize(
         "amount_of_cents",
