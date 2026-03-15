@@ -39,6 +39,6 @@ from app import main
         (99, [4, 0, 2, 3]),
     ],
 )
-def test_function(cents: int, expected: list):
+def test_function(cents: int, expected: list) -> None:
     result = main.get_coin_combination(cents)
     assert result == expected, f"Expected {expected} but got {result}"
