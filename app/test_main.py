@@ -1,5 +1,5 @@
 from app.main import get_coin_combination
 
 
-def test_example():
+def test_example() -> None:
     assert get_coin_combination(6) == [1, 1, 0, 0]
