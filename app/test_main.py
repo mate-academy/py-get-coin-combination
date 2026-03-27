@@ -1,4 +1,5 @@
 from app.main import get_coin_combination
 
 
-# write your tests here
+def test_example():
+    assert get_coin_combination(6) == [1, 1, 0, 0]
