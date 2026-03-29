@@ -1,6 +1,7 @@
 from app.main import get_coin_combination
 import pytest
 
+
 @pytest.mark.parametrize(
     "coin, expected",
     [
@@ -18,6 +19,7 @@ import pytest
 def test_coin_combination(coin: int, expected: list[int]) -> None:
     assert get_coin_combination(coin) == expected
 
+
 @pytest.mark.parametrize(
     "coin",
     [
@@ -30,6 +32,7 @@ def test_coin_combination(coin: int, expected: list[int]) -> None:
 def test_negative_ages(coin: int) -> None:
     with pytest.raises(ValueError):
         get_coin_combination(coin)
+
 
 @pytest.mark.parametrize(
     "coin",
