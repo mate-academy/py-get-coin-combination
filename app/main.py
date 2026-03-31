@@ -1,4 +1,6 @@
 def get_coin_combination(cents: int) -> list:
+    if cents < 0:
+        raise ValueError("Cents can't be negative")
     values = [1, 5, 10, 25]
     coins = [0, 0, 0, 0]
 
