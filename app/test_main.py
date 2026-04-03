@@ -42,7 +42,7 @@ class TestError:
     @pytest.mark.parametrize("number",
                              [
                                  -1,
-                                 -10*9
+                                 -10 * 9,
                                  -1000
                              ])
     def test_error_when_value_is_negative(self, number: int) -> None:
