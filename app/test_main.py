@@ -2,6 +2,7 @@ from app.main import get_coin_combination
 import pytest
 from typing import Any
 
+
 @pytest.mark.parametrize(
     "cents, expected",
     [
@@ -40,3 +41,33 @@ def test_large_value_performance_and_correctness() -> None:
     assert all(isinstance(x, int) and x >= 0 for x in result)
     total = result[0] * 1 + result[1] * 5 + result[2] * 10 + result[3] * 25
     assert total == cents
+
+
+def test_mixed_coins_for_6_and_17() -> None:
+    assert get_coin_combination(6)[0] > 0 and get_coin_combination(6)[1] > 0
+    assert sum(1 for x in get_coin_combination(17) if x > 0) >= 2
+
+
+def test_combination_for_30() -> None:
+    coins = get_coin_combination(30)
+    assert coins[3] == 1 and coins[1] == 1
+
+
+def test_mixed_coins_examples() -> None:
+    assert sum(1 for x in get_coin_combination(6) if x > 0) > 1
+    assert sum(1 for x in get_coin_combination(17) if x > 0) > 1
+    coins_30 = get_coin_combination(30)
+    assert coins_30[3] > 0 and coins_30[1] > 0
+
+
+@pytest.mark.parametrize("cents", [6, 17, 30, 41])
+def test_returns_multiple_coin_types_for_some_values(cents) -> None:
+    coins = get_coin_combination(cents)
+    assert sum(1 for x in coins if x > 0) >= 2
+
+
+def test_mixed_coin_examples():
+    assert sum(1 for x in get_coin_combination(6) if x > 0) >= 2
+    assert sum(1 for x in get_coin_combination(17) if x > 0) >= 2
+    coins_30 = get_coin_combination(30)
+    assert coins_30[3] > 0 and coins_30[1] > 0
