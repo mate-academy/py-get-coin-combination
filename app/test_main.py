@@ -61,12 +61,12 @@ def test_mixed_coins_examples() -> None:
 
 
 @pytest.mark.parametrize("cents", [6, 17, 30, 41])
-def test_returns_multiple_coin_types_for_some_values(cents) -> None:
+def test_returns_multiple_coin_types_for_some_values(cents: int) -> None:
     coins = get_coin_combination(cents)
     assert sum(1 for x in coins if x > 0) >= 2
 
 
-def test_mixed_coin_examples():
+def test_mixed_coin_examples() -> None:
     assert sum(1 for x in get_coin_combination(6) if x > 0) >= 2
     assert sum(1 for x in get_coin_combination(17) if x > 0) >= 2
     coins_30 = get_coin_combination(30)
