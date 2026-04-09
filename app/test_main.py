@@ -29,6 +29,6 @@ def test_sum_of_coins_should_equal_cents() -> None:
     cents = 87
     coins = get_coin_combination(cents)
     pennies, nickels, dimes, quarters = coins
-    
+
     total = (pennies * 1) + (nickels * 5) + (dimes * 10) + (quarters * 25)
     assert total == cents
