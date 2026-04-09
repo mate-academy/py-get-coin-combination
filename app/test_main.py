@@ -26,8 +26,9 @@ def test_should_return_list_of_length_four() -> None:
 
 
 def test_sum_of_coins_should_equal_cents() -> None:
-    # Validación de integridad: el valor total debe coincidir con la entrada
     cents = 87
-    p, n, d, q = get_coin_combination(cents)
-    total = p * 1 + n * 5 + d * 10 + q * 25
+    coins = get_coin_combination(cents)
+    pennies, nickels, dimes, quarters = coins
+    
+    total = (pennies * 1) + (nickels * 5) + (dimes * 10) + (quarters * 25)
     assert total == cents
