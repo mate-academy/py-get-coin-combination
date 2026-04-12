@@ -17,9 +17,11 @@ import pytest
 def test_get_coin_combination(coin: int, result: list) -> None:
     assert get_coin_combination(coin) == result
 
-def test_not_only_pennies():
+
+def test_not_only_pennies() -> None:
     assert get_coin_combination(5) != [5, 0, 0, 0]
 
-def test_returns_multiple_coin_types():
+
+def test_returns_multiple_coin_types() -> None:
     coins = get_coin_combination(17)
     assert sum(1 for c in coins if c > 0) > 1
