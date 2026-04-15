@@ -25,5 +25,5 @@ import pytest
         "201 cent"
     ]
 )
-def test_get_coin_combination_positive(cent: int, expected:list[int]) -> None:
+def test_get_coin_combination_positive(cent: int, expected: list[int]) -> None:
     assert get_coin_combination(cent) == expected
