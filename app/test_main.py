@@ -31,5 +31,8 @@ from app.main import get_coin_combination
         "all_types_cents"
     ]
 )
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(
+        cents: int,
+        expected: list[int]
+) -> None:
     assert get_coin_combination(cents) == expected
