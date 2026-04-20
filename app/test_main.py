@@ -1,6 +1,3 @@
-from app.main import get_coin_combination
-
-
 import pytest
 from app.main import get_coin_combination
 
@@ -28,10 +25,10 @@ from app.main import get_coin_combination
         (26, [1, 0, 0, 1]),
         (30, [0, 1, 0, 1]),
 
-        (41, [1, 1, 1, 1]),  # 25 + 10 + 5 + 1
+        (41, [1, 1, 1, 1]),
         (50, [0, 0, 0, 2]),
 
-        (99, [4, 0, 2, 3]),  # 3*25 + 2*10 + 4*1
+        (99, [4, 0, 2, 3]),
     ],
 )
 def test_get_coin_combination(cents, expected):
