@@ -31,8 +31,9 @@ import pytest
         "test expected result for 99 cents",
     ]
 )
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(cents: int, expected:list) -> None:
     assert get_coin_combination(cents) == expected
+
 
 @pytest.mark.parametrize(
     "cents",
@@ -45,9 +46,10 @@ def test_get_coin_combination(cents, expected):
         "negative 100 should raise an exception",
     ]
 )
-def test_get_coin_combination_negative(cents):
+def test_get_coin_combination_negative(cents: int) -> None:
     with pytest.raises(ValueError):
         get_coin_combination(cents)
+
 
 @pytest.mark.parametrize(
     "cents",
@@ -66,7 +68,6 @@ def test_get_coin_combination_negative(cents):
         "wrong type input dict",
     ]
 )
-def test_get_coin_combination_invalid_types(cents):
+def test_get_coin_combination_invalid_types(cents: int) -> None:
     with pytest.raises(TypeError):
         get_coin_combination(cents)
-
