@@ -12,5 +12,5 @@ import pytest
         (50, [0, 0, 0, 2]),
     ]
 )
-def test_get_coin_combination(coins: int, expected: list):
+def test_get_coin_combination(coins: int, expected: list) -> None:
     assert get_coin_combination(coins) == expected
