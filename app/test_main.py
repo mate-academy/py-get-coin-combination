@@ -1,6 +1,7 @@
 import pytest
 
 
+from typing import List
 from app.main import get_coin_combination
 
 
@@ -19,6 +20,5 @@ from app.main import get_coin_combination
         (123, [3, 0, 2, 4]),
     ]
 )
-
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(cents: int, expected: List[int]) -> None:
     assert get_coin_combination(cents) == expected
