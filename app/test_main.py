@@ -1,6 +1,7 @@
 import pytest
 from app.main import get_coin_combination
 
+
 @pytest.mark.parametrize(
     "cents, expected",
     [
@@ -18,8 +19,7 @@ from app.main import get_coin_combination
         ("a", TypeError),
     ]
 )
-
-def test_get_coin_combination(cents, expected) -> None:
+def test_get_coin_combination(cents: int, expected: list) -> None:
     if isinstance(expected, type) and issubclass(expected, BaseException):
         with pytest.raises(expected):
             get_coin_combination(cents)
