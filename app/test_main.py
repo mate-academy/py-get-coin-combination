@@ -15,7 +15,8 @@ from app.main import get_coin_combination
 def test_function_calculates_coin_combination_correctly(
     coins: int, result: list
 ) -> None:
-    assert(get_coin_combination(coins) == result)
+    assert (get_coin_combination(coins) == result)
+
 
 @pytest.mark.parametrize(
     "coins, result",
