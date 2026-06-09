@@ -24,6 +24,9 @@ def test_get_coin_combination(cents: int, result: list[int]) -> None:
         ("23", TypeError),
     ]
 )
-def test_get_coin_combination_raises_exceptions(cents: int, expected_error: type[Exception]) -> None:
+def test_get_coin_combination_raises_exceptions(
+        cents: int,
+        expected_error: type[Exception]
+) -> None:
     with pytest.raises(expected_error):
         get_coin_combination(cents)
