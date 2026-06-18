@@ -16,7 +16,7 @@ def test_negative_values() -> None:
         get_coin_combination(-1)
 
 
-@pytest.mark.parametrize("cents", ["one", 2.53, True]
+@pytest.mark.parametrize("cents", ["one", 2.53, {"one": 1}]
                          )
 def test_invalid_types(cents: int) -> None:
     with pytest.raises(TypeError):
