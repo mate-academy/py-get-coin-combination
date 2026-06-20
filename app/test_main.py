@@ -31,7 +31,6 @@ def test_monotonic_increase() -> None:
         assert total == cents
 
 
-
 def test_large_value() -> None:
     """Check a large amount like 1000 cents (10 dollars)."""
     result = get_coin_combination(1000)
