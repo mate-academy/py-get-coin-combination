@@ -10,8 +10,9 @@ class TestBasicCases:
         (10, [0, 0, 1, 0]),
         (25, [0, 0, 0, 1]),
     ])
-    def test_basic(self, cent: int, expected: list):
+    def test_basic(self, cent: int, expected: list) -> None:
         assert get_coin_combination(cent) == expected
+
 
 class TestEdgesCases:
     @pytest.mark.parametrize("cent, expected", [
@@ -20,5 +21,5 @@ class TestEdgesCases:
         (50, [0, 0, 0, 2]),
 
     ])
-    def test_basic(self, cent: int, expected: list):
+    def test_basic(self, cent: int, expected: list) -> None:
         assert get_coin_combination(cent) == expected
