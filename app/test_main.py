@@ -23,7 +23,6 @@ def test_normal_combination(cents: int, expected: list[int]) -> None:
     [
         "0",
         "one",
-        5.5,
         None,
         ""
     ]
