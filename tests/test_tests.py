@@ -5,7 +5,7 @@ from app import main
 
 def test_return_only_pennies(monkeypatch):
     def return_only_pennies(cents: int) -> list:
-        return [cents, 0, 0, 0]
+        return [cents, 0, 0, 0]     
 
     monkeypatch.setattr(main, "get_coin_combination", return_only_pennies)
 
