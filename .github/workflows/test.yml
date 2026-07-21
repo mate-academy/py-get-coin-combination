@@ -1,6 +1,8 @@
 name: Test
 
-on: [push, pull_request_target]
+on:
+  push:
+  pull_request:
 
 jobs:
   test:
@@ -9,9 +11,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        with:
-          ref: ${{github.event.pull_request.head.ref}}
-          repository: ${{github.event.pull_request.head.repo.full_name}}
 
       - name: Set Up Python 3.14
         uses: actions/setup-python@v2
@@ -31,12 +30,14 @@ jobs:
       - name: Run mentor tests
         timeout-minutes: 5
         run: pytest --numprocesses=auto tests/
-      - uses: mate-academy/auto-approve-action@v2
-        if: ${{ github.event.pull_request && success() }}
-        with:
-          github-token: ${{ github.token }}
-      - uses: mate-academy/auto-reject-action@v2
-        if: ${{ github.event.pull_request && failure() }}
-        with:
-          github-token: ${{ github.token }}
 
+      - name: Save PR number
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        run: echo "${{ github.event.pull_request.number }}" > pr-number.txt
+
+      - name: Upload PR number
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-number
+          path: pr-number.txt
