@@ -1,29 +1,28 @@
-# Coin combination
+# Комбінація монет
 
-Read [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start.
+Перед початком прочитайте [настанову](https://github.com/mate-academy/py-task-guideline/blob/main/README.md).
 
+Напишіть тести для функції `get_coin_combination`, яка приймає невід’ємне ціле число
+`cents` (сума в центах) і повертає комбінацію з найменшої
+можливої кількості монет, що дає ту саму суму.
 
-Write tests for `get_coin_combination` function that takes a non-negative integer
-`cents` (a specific amount in cents) and returns a combination of the smallest
-possible number of coins, giving the same amount.
+Функція має повертати список, де:
+- `coins[0]` = кількість пеннів (1 пенні = 1 цент);
+- `coins[1]` = кількість нікелів (1 нікель = 5 центів);
+- `coins[2]` = кількість даймів (1 дайм = 10 центів);
+- `coins[3]` = кількість квотерів (1 квотер = 25 центів).
 
-The function should return a list where:
-- `coins[0]` = number of pennies (1 penny = 1 cent);
-- `coins[1]` = number of nickels (1 nickel = 5 cents);
-- `coins[2]` = number of dimes (1 dime = 10 cents);
-- `coins[3]` = number of quarters (1 quarter = 25 cents).
+Зверніть увагу: для написання тестів використовуйте `pytest`.
 
-**Please note:** you have to use `pytest` for writing tests.
-
-Examples:
+Приклади:
 ```python
-get_coin_combination(1) == [1, 0, 0, 0]  # 1 penny
-get_coin_combination(6) == [1, 1, 0, 0]  # 1 penny + 1 nickel
-get_coin_combination(17) == [2, 1, 1, 0]   # 2 pennies + 1 nickel + 1 dime
-get_coin_combination(50) == [0, 0, 0, 2]   # 2 quarters
+get_coin_combination(1) == [1, 0, 0, 0]  # 1 пенні
+get_coin_combination(6) == [1, 1, 0, 0]  # 1 пенні + 1 нікель
+get_coin_combination(17) == [2, 1, 1, 0]   # 2 пенні + 1 нікель + 1 дайм
+get_coin_combination(50) == [0, 0, 0, 2]   # 2 квотери
 ```
 
-Run `pytest app/` to check if function pass your tests.
+Запустіть `pytest app/`, щоб перевірити, чи функція проходить ваші тести.
 
-Run `pytest --numprocesses=auto tests/` to check if your tests cover all boundary conditions
-and pass task tests.
+Запустіть `pytest --numprocesses=auto tests/`, щоб перевірити, чи ваші тести покривають усі граничні умови
+та проходять тести завдання.
