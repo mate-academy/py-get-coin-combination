@@ -54,19 +54,19 @@ from app.main import get_coin_combination
         (287, [2, 0, 1, 11]),
     ],
 )
-def test_get_coin_combination_values(cents, expected):
+def test_get_coin_combination_values(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
 
 
-def test_returns_a_list():
+def test_returns_a_list() -> None:
     assert isinstance(get_coin_combination(17), list)
 
 
-def test_returns_four_elements():
+def test_returns_four_elements() -> None:
     assert len(get_coin_combination(17)) == 4
 
 
-def test_result_reconstructs_original_amount():
+def test_result_reconstructs_original_amount() -> None:
     coin_values = (1, 5, 10, 25)
     for cents in range(0, 200):
         pennies, nickels, dimes, quarters = get_coin_combination(cents)
@@ -79,7 +79,7 @@ def test_result_reconstructs_original_amount():
         assert total == cents
 
 
-def test_result_uses_minimum_number_of_coins():
+def test_result_uses_minimum_number_of_coins() -> None:
     # Pennies should never reach 5 (would be replaced by a nickel),
     # nickels should never reach 2 (would be replaced by a dime),
     # dimes should never reach 3 in a way that isn't better as quarters.
