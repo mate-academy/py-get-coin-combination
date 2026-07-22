@@ -8,7 +8,7 @@ Write tests for `get_coin_combination` function that takes a non-negative intege
 possible number of coins, giving the same amount.
 
 The function should return a list where:
-- `coins[0]` = number of pennies (1 penny = 1 cent);
+- `coins[0]` = number of pennies (1 penny = 1 cent);\
 - `coins[1]` = number of nickels (1 nickel = 5 cents);
 - `coins[2]` = number of dimes (1 dime = 10 cents);
 - `coins[3]` = number of quarters (1 quarter = 25 cents).
