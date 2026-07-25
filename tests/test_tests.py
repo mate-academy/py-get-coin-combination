@@ -29,4 +29,3 @@ def test_return_only_one_type(monkeypatch):
     assert (
         test_result.value == 1
     ), "Tests should check that 'get_coin_combination' could return coins of the different types"
-
