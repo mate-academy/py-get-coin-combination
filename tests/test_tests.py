@@ -1,9 +1,8 @@
 import pytest
-
 from app import main
 
 
-def test_return_only_pennies(monkeypatch):
+def test_return_only_pennies(monkeypatch: pytest.MonkeyPatch) -> None:
     def return_only_pennies(cents: int) -> list:
         return [cents, 0, 0, 0]
 
@@ -12,10 +11,11 @@ def test_return_only_pennies(monkeypatch):
     test_result = pytest.main(["app/test_main.py"])
     assert (
         test_result.value == 1
-    ), "Tests should check that 'get_coin_combination' could return different coins, not only pennies"
+    ), ("Tests should check that 'get_coin_combination' "
+        "could return different coins, not only pennies")
 
 
-def test_return_only_one_type(monkeypatch):
+def test_return_only_one_type(monkeypatch: pytest.MonkeyPatch) -> None:
     def return_only_one_type(cents: int) -> list:
         if cents < 5:
             return [cents, 0, 0, 0]
@@ -28,5 +28,5 @@ def test_return_only_one_type(monkeypatch):
     test_result = pytest.main(["app/test_main.py"])
     assert (
         test_result.value == 1
-    ), "Tests should check that 'get_coin_combination' could return coins of the different types"
-
+    ), ("Tests should check that 'get_coin_combination' "
+        "could return coins of the different types")
