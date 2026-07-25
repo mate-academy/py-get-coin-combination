@@ -1,4 +1,10 @@
 def get_coin_combination(cents: int) -> list:
+    if isinstance(cents, (float, bool)):
+        raise TypeError
+
+    if cents < 0:
+        raise ValueError
+
     values = [1, 5, 10, 25]
     coins = [0, 0, 0, 0]
 
