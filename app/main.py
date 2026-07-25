@@ -1,4 +1,8 @@
 def get_coin_combination(cents: int) -> list:
+    if not isinstance(cents, int):
+        raise TypeError("Argument must be integer")
+    if cents < 0:
+        raise TypeError("Argument shouldn't be negative")
     values = [1, 5, 10, 25]
     coins = [0, 0, 0, 0]
 
