@@ -7,7 +7,7 @@ def test_can_output_penny() -> None:
 
 
 def test_can_output_nickel() -> None:
-    assert get_coin_combination(1) == [1, 1, 0, 0]
+    assert get_coin_combination(6) == [1, 1, 0, 0]
 
 
 def test_can_output_dime() -> None:
