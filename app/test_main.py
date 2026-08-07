@@ -41,8 +41,9 @@ def test_get_coin_combination_five_cents() -> None:
     assert get_coin_combination(5) == [0, 1, 0, 0]
 
 
-def test_get_coin_combination_ninety_nine_cents():
-    """Test for 99 cents: should return 3 quarters, 2 dimes, 0 nickels, and 4 pennies."""
+def test_get_coin_combination_ninety_nine_cents() -> None:
+    """Test for 99 cents: should return 3 quarters,
+    2 dimes, 0 nickels, and 4 pennies."""
     assert get_coin_combination(99) == [4, 0, 2, 3]
 
 
@@ -57,5 +58,6 @@ def test_get_coin_combination_mixed_coins() -> None:
 
 
 def test_get_coin_combination_mixed_coins_with_quarters() -> None:
-    """Test for 67 cents: should return 2 pennies, 1 nickel, 1 dime, and 2 quarters."""
+    """Test for 67 cents: should return 2 pennies,
+    1 nickel, 1 dime, and 2 quarters."""
     assert get_coin_combination(67) == [2, 1, 1, 2]
