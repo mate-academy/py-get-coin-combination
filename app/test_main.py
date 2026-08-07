@@ -20,11 +20,14 @@ from app.main import get_coin_combination
         (50, [0, 0, 0, 2]),
     ],
 )
-def test_get_coin_combination_examples(cents, expected):
+def test_get_coin_combination_examples(
+    cents: int,
+    expected: list[int],
+) -> None:
     assert get_coin_combination(cents) == expected
 
 
-def test_get_coin_combination_returns_valid_coin_sum():
+def test_get_coin_combination_returns_valid_coin_sum() -> None:
     for cents in range(0, 101):
         coins = get_coin_combination(cents)
         total = sum(coins[i] * value for i, value in enumerate((1, 5, 10, 25)))
