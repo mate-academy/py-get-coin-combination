@@ -13,3 +13,8 @@ from app.main import get_coin_combination
 )
 def test_cent(cent: int, result: list[int]) -> None:
     assert get_coin_combination(cent) == result
+
+
+def test_value() -> None:
+    with pytest.raises(ValueError):
+        get_coin_combination(-2)
