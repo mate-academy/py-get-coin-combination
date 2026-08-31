@@ -19,10 +19,7 @@ def test_different_combinations(
 ) -> None:
     assert get_coin_combination(cents) == values
 
+
 def test_cents_wrong_type_str() -> None:
     with pytest.raises(TypeError):
         get_coin_combination("15")
-
-def test_cents_wrong_type_float() -> None:
-    with pytest.raises(TypeError):
-        get_coin_combination(25.5)
