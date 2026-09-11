@@ -23,5 +23,5 @@ from app.main import get_coin_combination
         (100, [0, 0, 0, 4]),
     ],
 )
-def test_get_coin_comdination(cents, expected):
+def test_get_coin_comdination(cents: int, expected: list) -> None:
     assert get_coin_combination(cents) == expected
