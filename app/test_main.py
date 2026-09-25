@@ -1,4 +1,38 @@
+import pytest
+
 from app.main import get_coin_combination
 
 
-# write your tests here
+@pytest.mark.parametrize(
+    "cents,expected",
+    [
+        (0, [0, 0, 0, 0]),
+        (1, [1, 0, 0, 0]),
+        (4, [4, 0, 0, 0]),
+        (5, [0, 1, 0, 0]),
+        (6, [1, 1, 0, 0]),
+        (10, [0, 0, 1, 0]),
+        (15, [0, 1, 1, 0]),
+        (17, [2, 1, 1, 0]),
+        (25, [0, 0, 0, 1]),
+        (41, [1, 1, 1, 1]),
+        (50, [0, 0, 0, 2]),
+        (99, [4, 0, 2, 3]),
+    ],
+    ids=[
+        "zero cents gives no coins",
+        "one cent gives one penny",
+        "four cents gives only pennies",
+        "five cents gives one nickel",
+        "six cents gives penny and nickel",
+        "ten cents gives one dime",
+        "fifteen cents gives nickel and dime",
+        "seventeen cents gives pennies, nickel and dime",
+        "twenty five cents gives one quarter",
+        "forty one cents gives one of each coin",
+        "fifty cents gives two quarters",
+        "ninety nine cents gives the fewest coins",
+    ],
+)
+def test_get_coin_combination(cents: int, expected: list) -> None:
+    assert get_coin_combination(cents) == expected
