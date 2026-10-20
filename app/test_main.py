@@ -12,7 +12,7 @@ from app.main import get_coin_combination
         (17, [2, 1, 1, 0]),
         (25, [0, 0, 0, 1]),
         (50, [0, 0, 0, 2]),
-        (99, [4, 0, 2, 3]), # 4 pennies, 2 dimes, 3 quarters
+        (99, [4, 0, 2, 3]),  # 4 pennies, 2 dimes, 3 quarters
     ],
     ids=[
         "zero_cents",
