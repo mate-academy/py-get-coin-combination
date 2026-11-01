@@ -1,4 +1,7 @@
-def get_coin_combination(cents: int) -> list:
+def get_coin_combination(cents: int) -> list[int]:
+    if not isinstance(cents, int) or isinstance(cents, bool) or cents < 0:
+        raise TypeError("cents must be a non-negative integer")
+
     values = [1, 5, 10, 25]
     coins = [0, 0, 0, 0]
 
