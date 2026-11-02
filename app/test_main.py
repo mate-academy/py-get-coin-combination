@@ -1,23 +1,25 @@
+from typing import List
 import pytest
-from app.coin_combination import get_coin_combination
 
 
 @pytest.mark.parametrize(
     "cents, expected",
     [
-        (0, [0, 0, 0, 0]),    # Zero centavos
-        (1, [1, 0, 0, 0]),    # 1 penny
-        (4, [4, 0, 0, 0]),    # Apenas pennies
-        (5, [0, 1, 0, 0]),    # Exatamente 1 nickel
-        (6, [1, 1, 0, 0]),    # 1 penny + 1 nickel
-        (10, [0, 0, 1, 0]),   # Exatamente 1 dime
-        (17, [2, 1, 1, 0]),   # 2 pennies + 1 nickel + 1 dime
-        (25, [0, 0, 0, 1]),   # Exatamente 1 quarter
-        (41, [1, 1, 1, 1]),   # Combinação de todas as moedas (1q + 1d + 1n + 1p)
-        (50, [0, 0, 0, 2]),   # 2 quarters
-        (99, [4, 0, 2, 3]),   # 3 quarters + 2 dimes + 4 pennies
-        (100, [0, 0, 0, 4]),  # 4 quarters (1 dólar)
+        (0, [0, 0, 0, 0]),
+        (1, [1, 0, 0, 0]),
+        (4, [4, 0, 0, 0]),
+        (5, [0, 1, 0, 0]),
+        (6, [1, 1, 0, 0]),
+        (10, [0, 0, 1, 0]),
+        (17, [2, 1, 1, 0]),
+        (25, [0, 0, 0, 1]),
+        (41, [1, 1, 1, 1]),
+        (50, [0, 0, 0, 2]),
+        (99, [4, 0, 2, 3]),
+        (100, [0, 0, 0, 4]),
     ],
 )
-def test_get_coin_combination(cents, expected):
+def test_get_coin_combination(cents: int, expected: List[int]) -> None:
+    from app.main import get_coin_combination
+
     assert get_coin_combination(cents) == expected
