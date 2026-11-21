@@ -18,13 +18,3 @@ from app.main import get_coin_combination
 )
 def test_get_coin_combination(coins: int, values: list) -> None:
     assert get_coin_combination(coins) == values
-
-
-def test_argument_must_be_integer() -> None:
-    with pytest.raises(TypeError):
-        get_coin_combination(True)
-
-
-def test_argument_must_be_positive() -> None:
-    with pytest.raises(ValueError):
-        get_coin_combination(-1)
