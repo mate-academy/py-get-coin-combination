@@ -32,6 +32,6 @@ def test_coin_combination(cents: int, results_list: list) -> None:
         {}
     ]
 )
-def test_wrong_type(cents: str | None | list | dict):
+def test_wrong_type(cents: str | None | list | dict) -> None:
     with pytest.raises(TypeError):
         get_coin_combination(cents)
